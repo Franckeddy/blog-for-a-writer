@@ -1,4 +1,4 @@
- <?php foreach ($db->query('SELECT * FROM articles', 'App\Table\Article') as $post): ?>
+ <?php foreach (App\Table\Article::gatLast() as $post): ?>
 
      <h2>
          <a href="<?= $post->url; ?>"><?= $post->title; ?></a>

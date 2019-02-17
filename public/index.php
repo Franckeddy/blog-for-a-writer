@@ -13,9 +13,6 @@ else
     $p = 'home';
 }
 
-// initialisation de objets
-$db = new \App\Database('blog');
-
 ob_start();
 
 if ($p === 'home')
