@@ -1,0 +1,10 @@
+{
+    "name": "macdefranck/blog",
+    "authors": [
+        {
+            "name": "Franckeddy",
+            "email": "franck@donkeycode.com"
+        }
+    ],
+    "require": {}
+}
