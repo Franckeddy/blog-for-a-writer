@@ -10,12 +10,9 @@ if ($categorie === false)
     App::notFound();
 }
 $articles = Article::lastByCategory($_GET['id']);
-$categories = Categorie::all();
-
+$categories = Categorie::All();
 ?>
 
-
-<h1><?= $categories->title?> </h1>
 
 <div class="row">
     <div class="col-sm-8">
@@ -31,7 +28,7 @@ $categories = Categorie::all();
             <p>
                 <?= $post->extrait; ?>
             </p>
-‡
+
         <?php endforeach; ?>
 
     </div>
@@ -39,7 +36,7 @@ $categories = Categorie::all();
     <div class="com-sm-4">
         <ul>
 
-            <?php foreach (App\Table\Categorie::all() as $categorie): ?>
+            <?php foreach (\App\Table\Categorie::All() as $categorie): ?>
                 <li>
                     <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
                 </li>

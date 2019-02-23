@@ -25,7 +25,7 @@ elseif ($p === 'article')
 }
 elseif ($p === 'categorie')
 {
-    require '../pages/categorie.php';
+    require '../pages/categories.php';
 }
 
 $content = ob_get_clean();

@@ -10,7 +10,7 @@ class App
     const DB_HOST = 'localhost';
 
     private static $database;
-    //private static $title = 'Blog de l\'écrivain';
+    private static $title = 'Blog de l\'écrivain';
 
     public static function getDb()
     {
@@ -27,13 +27,13 @@ class App
         header('location:index.php?p=404');
     }
 
-    /*public static function getTitle()
+    public static function getTitle()
     {
-        return self::$title();
+        return self::$title;
     }
 
     public static function setTitle($title)
     {
-        self::$title = $title;
-    }*/
+        self::$title = $title . ' | ' . self::$title;
+    }
 }
