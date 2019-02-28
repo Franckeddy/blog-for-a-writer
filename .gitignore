@@ -5,6 +5,7 @@
 /composer
 composer.json
 composer.lock
+composer.phar
 
 ###> Bootstrap ###
 /node_modules
