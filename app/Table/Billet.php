@@ -4,18 +4,18 @@ namespace App\Table;
 
 use App\App;
 
-class Article extends Table
+class Billet extends Table
 {
-    protected static $table = 'articles';
+    protected static $table = 'billets';
 
     public static function find($id)
     {
         return self::query("
-                SELECT articles.id, articles.title, articles.content, categories.title as categorie 
-                FROM articles 
+                SELECT billets.id, billets.title, billets.content, categories.title as categorie 
+                FROM billets 
                 LEFT JOIN categories 
                 ON category_id = categories.id
-                WHERE  articles.id = ?
+                WHERE  billets.id = ?
                 ", [$id], true);
     }
 
@@ -23,29 +23,29 @@ class Article extends Table
     public static function getLast()
     {
         return self::query("
-                SELECT articles.id, articles.title, articles.content, categories.title as categorie 
-                FROM articles 
+                SELECT billets.id, billets.title, billets.content, categories.title as categorie 
+                FROM billets 
                 LEFT JOIN categories 
                 ON category_id = categories.id
-                ORDER BY articles.date DESC 
+                ORDER BY billets.date DESC 
                 ");
     }
 
     public static function lastByCategory($category_id)
     {
         return self::query("
-                SELECT articles.id, articles.title, articles.content, categories.title as categorie 
-                FROM articles 
+                SELECT billets.id, billets.title, billets.content, categories.title as categorie 
+                FROM billets 
                 LEFT JOIN categories 
                 ON category_id = categories.id
                 WHERE category_id = ? 
-                ORDER BY articles.date DESC 
+                ORDER BY billets.date DESC 
                 ", [$category_id]);
     }
 
     public function getUrl()
     {
-        return 'index.php?p=article&id=' . $this->id;
+        return 'index.php?p=billet&id=' . $this->id;
     }
 
     public function getExtrait()

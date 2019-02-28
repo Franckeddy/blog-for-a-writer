@@ -1,15 +1,14 @@
 <?php
 
 use App\Table\Categorie;
-use App\Table\Article;
+use App\Table\Billet;
 use App\App;
 
 $categorie = Categorie::find($_GET['id']);
-if ($categorie === false)
-{
+if ($categorie === false) {
     App::notFound();
 }
-$articles = Article::lastByCategory($_GET['id']);
+$billets = Billet::lastByCategory($_GET['id']);
 $categories = Categorie::All();
 ?>
 
@@ -17,7 +16,7 @@ $categories = Categorie::All();
 <div class="row">
     <div class="col-sm-8">
 
-        <?php foreach ($articles as $post): ?>
+        <?php foreach ($billets as $post): ?>
 
             <h2>
                 <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
@@ -37,6 +36,7 @@ $categories = Categorie::All();
         <ul>
 
             <?php foreach (\App\Table\Categorie::All() as $categorie): ?>
+
                 <li>
                     <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
                 </li>

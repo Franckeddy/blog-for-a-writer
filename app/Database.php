@@ -22,8 +22,7 @@ class Database
 
     private function getPDO()
     {
-        if ($this->pdo === null)
-        {
+        if ($this->pdo === null) {
             $pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
@@ -35,12 +34,9 @@ class Database
     {
         $req = $this->getPDO()->query($statement);
         $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
-        if ($one)
-        {
+        if ($one) {
             $datas = $req->fetch();
-        }
-        else
-        {
+        } else {
             $datas = $req->fetchAll();
         }
         return $datas;
@@ -51,12 +47,9 @@ class Database
         $req = $this->getPDO()->prepare($statement);
         $req->execute($attributes);
         $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
-        if ($one)
-        {
+        if ($one) {
             $datas = $req->fetch();
-        }
-        else
-        {
+        } else {
             $datas = $req->fetchAll();
         }
 

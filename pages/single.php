@@ -1,11 +1,10 @@
 <?php
 
 use App\App;
-use App\Table\Article;
+use App\Table\Billet;
 
-$post = Article::find($_GET['id']);
-if ($post === false)
-{
+$post = Billet::find($_GET['id']);
+if ($post === false) {
     App::notFound();
 }
 App::setTitle($post->title);
