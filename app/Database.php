@@ -12,6 +12,13 @@ class Database
     private $db_host;
     private $pdo;
 
+    /**
+     * Database constructor.
+     * @param $db_name
+     * @param string $db_user
+     * @param string $db_password
+     * @param string $db_host
+     */
     public function __construct($db_name, $db_user = 'root', $db_password = 'root', $db_host = 'localhost')
     {
         $this->db_name = $db_name;
@@ -20,6 +27,9 @@ class Database
         $this->db_host = $db_host;
     }
 
+    /**
+     * @return PDO
+     */
     private function getPDO()
     {
         if ($this->pdo === null) {
@@ -30,6 +40,12 @@ class Database
         return $this->pdo;
     }
 
+    /**
+     * @param $statement
+     * @param $class_name
+     * @param bool $one
+     * @return array|mixed
+     */
     public function query($statement, $class_name, $one = false)
     {
         $req = $this->getPDO()->query($statement);
@@ -42,6 +58,13 @@ class Database
         return $datas;
     }
 
+    /**
+     * @param $statement
+     * @param $attributes
+     * @param $class_name
+     * @param bool $one
+     * @return array|mixed
+     */
     public function prepare($statement, $attributes, $class_name, $one = false)
     {
         $req = $this->getPDO()->prepare($statement);

@@ -6,8 +6,15 @@ use App\App;
 
 class Billet extends Table
 {
+    /**
+     * @var string
+     */
     protected static $table = 'billets';
 
+    /**
+     * @param $id
+     * @return array|mixed
+     */
     public static function find($id)
     {
         return self::query("
@@ -20,6 +27,9 @@ class Billet extends Table
     }
 
 
+    /**
+     * @return array|mixed
+     */
     public static function getLast()
     {
         return self::query("
@@ -31,6 +41,10 @@ class Billet extends Table
                 ");
     }
 
+    /**
+     * @param $category_id
+     * @return array|mixed
+     */
     public static function lastByCategory($category_id)
     {
         return self::query("
@@ -43,15 +57,21 @@ class Billet extends Table
                 ", [$category_id]);
     }
 
+    /**
+     * @return string
+     */
     public function getUrl()
     {
         return 'index.php?p=billet&id=' . $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getExtrait()
     {
         $html = '<p>' . substr($this->content, 0, 300) . '...</p>';
-        $html .= '<p><a href="' . $this->getURL() . '">Voir la suite</a></p>';
+        $html .= '<p><a class="btn btn-outline-secondary" href="' . $this->getURL() . '">Voir la suite</a></p>';
         return $html;
     }
 }

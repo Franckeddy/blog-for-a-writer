@@ -12,6 +12,9 @@ class App
     private static $database;
     private static $title = 'Blog de l\'écrivain';
 
+    /**
+     * @return Database
+     */
     public static function getDb()
     {
         if (self::$database === null) {
@@ -20,17 +23,26 @@ class App
         return self::$database;
     }
 
+    /**
+     *
+     */
     public static function notFound()
     {
         header("HTTP/1.0 404 not found");
         header('location:index.php?p=404');
     }
 
+    /**
+     * @return string
+     */
     public static function getTitle()
     {
         return self::$title;
     }
 
+    /**
+     * @param $title
+     */
     public static function setTitle($title)
     {
         self::$title = $title . ' | ' . self::$title;

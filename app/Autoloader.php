@@ -7,9 +7,6 @@ namespace App;
  */
 class Autoloader
 {
-    /**
-     *
-     */
     static function register()
     {
         spl_autoload_register(array(__CLASS__, 'autoload'));
@@ -25,6 +22,5 @@ class Autoloader
             $class = str_replace('\\', '/', $class);
             require __DIR__ . '/' . $class . '.php';
         }
-
     }
 }

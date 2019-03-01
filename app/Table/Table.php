@@ -6,6 +6,9 @@ use App\App;
 
 class Table
 {
+    /**
+     * @return array|mixed
+     */
     public static function All()
     {
         return App::getDb()->query("
@@ -14,6 +17,10 @@ class Table
                 ", get_called_class());
     }
 
+    /**
+     * @param $id
+     * @return array|mixed
+     */
     public static function find($id)
     {
         return static::query("
@@ -22,6 +29,12 @@ class Table
                 WHERE id = ? ", [$id], true);
     }
 
+    /**
+     * @param $statement
+     * @param null $attributes
+     * @param bool $one
+     * @return array|mixed
+     */
     public static function query($statement, $attributes = null, $one = false)
     {
         if ($attributes) {
@@ -32,6 +45,10 @@ class Table
         }
     }
 
+    /**
+     * @param $key
+     * @return mixed
+     */
     public function __get($key)
     {
         $method = 'get' . ucfirst($key);
