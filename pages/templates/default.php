@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Blog pour un écrivain">
     <meta name="author" content="Franck Garçon">
-    <title><?= App\App::getTitle(); ?></title>
+    <title><?= App::getInstance()->title; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,40 +18,45 @@
     <link href="starter-template.css" rel="stylesheet">
 </head>
 <body>
-<!--navbar-->
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="index.php">Acceuil</a>
-            <span class="text-muted">Bienvenue sur le Blog.</span>
-        </div>
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="#">Billets</a>
-            <span class="text-muted">Liste des Billets.</span>
-        </div>
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="#">Catégories</a>
-            <span class="text-muted">Liste des Catégories.</span>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+    <div class="container-fluid">
 
-    <div class="container" style="padding-top: 1em">
-        <div class="jumbotron" style="padding-top: 2em">
-            <?= $content; ?>
+    <!--navbar-->
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <a class="text-white h4" href="index.php">Acceuil</a>
+                <span class="text-muted">Bienvenue sur le Blog.</span>
+            </div>
+            <div class="bg-dark p-4">
+                <a class="text-white h4" href="#">Billets</a>
+                <span class="text-muted">Liste des Billets.</span>
+            </div>
+            <div class="bg-dark p-4">
+                <a class="text-white h4" href="#">Catégories</a>
+                <span class="text-muted">Liste des Catégories.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <div class="container" style="padding-top: 1em">
+            <div class="jumbotron" style="padding-top: 2em">
+                <?= $content; ?>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="p-3 mb-2 bg-dark text-white">
+            <footer class="container" style="padding-top: 1em">
+                <div class="panel panel-body">
+                    <p>Tous droits réservés par moi...</p>
+                </div>
+            </footer>
         </div>
     </div>
-    <!--footer-->
-    <div class="p-3 mb-2 bg-dark text-white">
-        <footer class="container" style="padding-top: 1em">
-            <div class="panel panel-body">
-                <p>Tous droits réservés par moi...</p>
-            </div>
-        </footer>
-    </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

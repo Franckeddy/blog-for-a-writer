@@ -1,35 +1,32 @@
 <?php
 
-require '../app/Autoloader.php';
+define('ROOT', dirname(__DIR__));
 
-App\Autoloader::register();
+require ROOT . '/app/App.php';
+App::load();
 
-if (isset($_GET['p'])) {
-    $p = $_GET['p'];
-} else {
-    $p = 'home';
+if (isset($_GET['p']))
+{
+    $page = $_GET['p'];
+}
+else{
+    $page = 'home';
 }
 
-/**
- * Turn on output buffering
- * @link https://php.net/manual/en/function.ob-start.php
- */
 ob_start();
-
-if ($p === 'home') {
-    require '../pages/home.php';
-} elseif ($p === 'billet') {
-    require '../pages/single.php';
-} elseif ($p === 'categorie') {
-    require '../pages/categorie.php';
+if ($page === 'home')
+{
+    require ROOT . '/pages/posts/home.php';
+}
+elseif ($page === 'posts.category')
+{
+    require ROOT . '/pages/posts/category.php';
+}
+elseif ($page === 'posts.show')
+{
+    require ROOT . '/pages/posts/show.php';
 }
 
-/**
- * Get current buffer contents and delete current output buffer
- * @link https://php.net/manual/en/function.ob-get-clean.php
- * @return string|false the contents of the output buffer and end output buffering.
- * If output buffering isn't active then false is returned.
- */
 $content = ob_get_clean();
 
-require '../pages/templates/default.php';
+require ROOT . '/pages/templates/default.php';
