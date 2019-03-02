@@ -1,13 +1,7 @@
 ###> validator ###
 
 ###> composer ###
-/composer
-composer.lock
-composer.phar
 
 ###> Bootstrap ###
 /node_modules
 package-lock.json
-
-/vendor
-.gitignore
