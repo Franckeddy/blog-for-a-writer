@@ -47,10 +47,16 @@ class App
         Core\Autoloader::register();
     }
 
-    public static function notFound()
+    public function forbidden()
     {
-        header("HTTP/1.0 404 not found");
-        header('location:index.php?p=404');
+        header('HTTP/1.0 403 not found');
+        die('Acces interdit');
+    }
+
+    public function notFound()
+    {
+        header('HTTP/1.0 404 not found');
+        die('Page introuvable');
     }
 
 }

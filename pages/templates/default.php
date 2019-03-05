@@ -41,7 +41,7 @@
             </button>
         </nav>
 
-        <div class="container" style="padding-top: 1em">
+        <div class="container-fluid" style="padding-top: 1em">
             <div class="jumbotron" style="padding-top: 2em">
                 <?= $content; ?>
             </div>
