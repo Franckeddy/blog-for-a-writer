@@ -58,10 +58,11 @@ Add additional notes about how to deploy this on a live system
 
 * [PhpStorm](https://www.jetbrains.com/phpstorm/) - The Lightning-Smart PHP IDE
 * [Circleci](https://circleci.com/) - Continuous integration and delivery platform 
+* [fish](https://fishshell.com/) - Command line shell for Linux, macOS, and the rest of the family. 
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I use [GitHub](https://github.com/) - Web-based version-control and collaboration platform for software developers.
 
 ## Authors
 
