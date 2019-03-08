@@ -944,7 +944,7 @@
     <column id="238" parent="231" name="date">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="239" parent="231" name="category_id">

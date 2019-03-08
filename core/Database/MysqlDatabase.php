@@ -112,4 +112,13 @@ class MysqlDatabase extends Database
 
         return $datas;
     }
+
+    /**
+     * Fonction de PDO, retourne l'id du dernier enregistrement effectué par PDO
+     * @return string
+     */
+    public function lastInsertId()
+    {
+        return $this->getPDO()->lastInsertId();
+    }
 }
