@@ -6,9 +6,11 @@ $posts = App::getInstance()->getTable('Post')->all();
 
 <table class="table">
     <thead>
-    <td>ID</td>
-    <td>Titre</td>
-    <td>Action</td>
+    <tr>
+        <td>ID</td>
+        <td>Titre</td>
+        <td>Action</td>
+    </tr>
     </thead>
     <tbody>
         <?php foreach ($posts as $post): ?>

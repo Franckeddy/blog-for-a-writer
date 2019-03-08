@@ -4,17 +4,25 @@ $postTable = App::getInstance()->getTable('Post');
 
 if (!empty($_POST)){
     $result = $postTable->update($_GET['id'], [
-        'titre' => $_POST['titre'],
-        'contenu' => $_POST['contenu'],
+        'title' => $_POST['title'],
+        'content' => $_POST['content'],
+        'category_id' => $_POST['category_id'],
     ]);
-
+    if($result)
+    {
+        ?>
+        <div class="alert alert-success">Le Billet à bien étét ajouté</div>
+        <?php
+    };
 }
 $post = $postTable->find($_GET['id']);
+$categories = App::getInstance()->getTable('Category')->extract('id', 'title');
 $form = new \Core\HTML\BootstrapForm($post);
 ?>
 
 <form method="post">
-    <?= $form->input('titre', 'Titre de l\'article'); ?>
-    <?= $form->input('contenu', 'Contenu', ['type' => 'textarea']); ?>
+    <?= $form->input('title', 'Titre de l\'article'); ?>
+    <?= $form->input('content', 'Contenu', ['type' => 'textarea']); ?>
+    <?= $form->select('categroy_id', 'Catégorie', $categories); ?>
     <button class="btn btn-primary">Sauvegarder</button>
 </form>

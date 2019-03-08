@@ -27,7 +27,7 @@ class PostTable extends Table
      * @param $id int
      * @return \App\Entity\PostEntity
      */
-    public function find($id)
+    public function findWithCategory($id)
     {
         return $this->query("
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie

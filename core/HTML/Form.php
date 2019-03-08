@@ -7,17 +7,29 @@ class Form
         private $data;
         private $surround = 'p';
 
-        public function __construct($data = array())
+    /**
+     * Form constructor.
+     * @param array $data
+     */
+    public function __construct($data = array())
         {
             $this->data = $data;
         }
 
-        protected function surround($html)
+    /**
+     * @param $html
+     * @return string
+     */
+    protected function surround($html)
         {
             return "<{$this->surround}>{$html}</{$this->surround}>";
         }
 
-        protected function getValue($index)
+    /**
+     * @param $index
+     * @return mixed|null
+     */
+    protected function getValue($index)
         {
             if (is_object($this->data))
             {
@@ -26,12 +38,21 @@ class Form
             return isset($this->data[$index]) ? $this->data[$index] : null;
         }
 
-        public function submit()
+    /**
+     * @return string
+     */
+    public function submit()
         {
             return $this->surround('<button type="submit">Envoyer</button>');
         }
 
-        public function input($name, $label, $options = [])
+    /**
+     * @param $name
+     * @param $label
+     * @param array $options
+     * @return string
+     */
+    public function input($name, $label, $options = [])
     {
         $type = isset($options['type']) ? $options['type'] : 'text';
         return $this->surround(

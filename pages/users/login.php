@@ -7,7 +7,7 @@ if (!empty($_POST))
         header('location: admin.php');
     }else{
         ?>
-        <div class="alert-danger">
+        <div class="alert alert-danger">
             Identifiants incorrect
         </div>
         <?php
