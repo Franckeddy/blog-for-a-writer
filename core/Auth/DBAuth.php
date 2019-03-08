@@ -4,10 +4,21 @@ namespace Core\Auth;
 
 use Core\Database\Database;
 
+/**
+ * Class DBAuth
+ * @package Core\Auth
+ */
 class DBAuth{
 
+    /**
+     * @var Database
+     */
     private $db;
 
+    /**
+     * DBAuth constructor.
+     * @param Database $db
+     */
     public function __construct(Database $db)
     {
         $this->db = $db;
@@ -34,11 +45,17 @@ class DBAuth{
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function logged()
     {
         return isset($_SESSION['auth']);
     }
 
+    /**
+     * @return bool
+     */
     public function getUserId()
     {
         if ($this->logged())

@@ -1,5 +1,5 @@
 # Blog for a Writer
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0b62021e6bef4ee78196edd5ebd98720)](https://www.codacy.com/app/Franckeddy/blog-for-a-writer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Franckeddy/blog-for-a-writer&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2866e5a514004498b463c49e0ec00b71)](https://app.codacy.com/app/Franckeddy/blog-for-a-writer?utm_source=github.com&utm_medium=referral&utm_content=Franckeddy/blog-for-a-writer&utm_campaign=Badge_Grade_Settings)
 
 Simple blog application in PHP with a MySQL database. Frontend interface (ticket reading) and a backend interface (ticket administration for writing).
 

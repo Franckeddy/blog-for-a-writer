@@ -2,13 +2,27 @@
 
 namespace Core\HTML;
 
+/**
+ * Class Form
+ * Permet de générer un formulaire
+ * @package Core\HTML
+ */
 class Form
 {
-        private $data;
-        private $surround = 'p';
+    /**
+     * Données utilisées par le formulaire
+     * @var array
+     */
+    private $data;
 
     /**
-     * Form constructor.
+     * string Tag utilisé pour entourer les champs
+     * @var string
+     */
+    private $surround = 'p';
+
+    /**
+     * Données utilisées par le formulaire
      * @param array $data
      */
     public function __construct($data = array())
@@ -26,6 +40,7 @@ class Form
         }
 
     /**
+     * Index de la valeur à recupérer
      * @param $index
      * @return mixed|null
      */

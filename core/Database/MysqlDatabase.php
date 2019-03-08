@@ -53,7 +53,6 @@ class MysqlDatabase extends Database
             strpos($statement, 'UPDATE') === 0 ||
             strpos($statement, 'INSERT') === 0 ||
             strpos($statement, 'DELETE') === 0
-
         )
         {
             return $req;
@@ -90,7 +89,6 @@ class MysqlDatabase extends Database
             strpos($statement, 'UPDATE') === 0 ||
             strpos($statement, 'INSERT') === 0 ||
             strpos($statement, 'DELETE') === 0
-
         )
         {
             return $res;
