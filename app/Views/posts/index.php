@@ -2,7 +2,7 @@
     <div class="col-sm-10">
         <div class="container"><h1>Billets</h1></div>
         <hr size="5" width=”100%” />
-        <?php foreach (App::getInstance()->getTable('Post')->last() as $post): ?>
+        <?php foreach ($posts as $post): ?>
             <div class="container">
                 <h2>
                     <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
@@ -20,7 +20,7 @@
     <div class="col-sm-2">
         <div class="container"><h2>Catégories</h2></div>
         <ul>
-            <?php foreach (App::getInstance()->getTable('Category')->all() as $categorie): ?>
+            <?php foreach ($categories as $categorie): ?>
                 <li>
                     <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
                 </li>
