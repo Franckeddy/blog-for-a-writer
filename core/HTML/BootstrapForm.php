@@ -30,10 +30,9 @@ class BootstrapForm extends Form
 
         }
         else
-            {
-                $input = '<input type="' .$type. '" name="' . $name .'"value"' . $this->getValue($name) . '" class="form-control">';
-
-            }
+        {
+            $input = '<input type="' .$type. '" name="' . $name .'"value"' . $this->getValue($name) . '" class="form-control">';
+        }
         return $this->surround($label . $input);
     }
 

@@ -117,7 +117,8 @@ class Table
                $one
            );
         }
-        else{
+        else
+        {
             return $this->db->query(
                 $statement,
                 str_replace('Table', 'Entity', get_class($this)),

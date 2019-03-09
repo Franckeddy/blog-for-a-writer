@@ -58,15 +58,19 @@ _Track your quality evolution_
  Get a code quality glance at your project and track its quality evolution over time, easily paying back your technical debt.Give an example
 ```
 
+**[Circleci](https://circleci.com/)** monitors for any changes in the code repo and starts building unit & integration tests. It assigns label for each version of build and also informs the team for a successful build or if it fails, the team fixes the issue and again starts to integrate. 
+```
+CircleCI build dashboard shows all recent builds in one place. Filter by "My builds" or "All builds" to find what you're looking for faster.
+```
+
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [PhpStorm](https://www.jetbrains.com/phpstorm/) - The Lightning-Smart PHP IDE
-* [Circleci](https://circleci.com/) - Continuous integration and delivery platform 
-* [Codacy](https://app.codacy.com/) - Automates code reviews and monitors code quality 
+* [PhpStorm](https://www.jetbrains.com/phpstorm/) - The Lightning-Smart PHP IDE.
 * [fish](https://fishshell.com/) - Command line shell for Linux, macOS, and the rest of the family. 
 
 ## Versioning
