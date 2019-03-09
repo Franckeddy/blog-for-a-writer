@@ -1,4 +1,5 @@
 # Blog for a Writer
+[![CircleCI](https://circleci.com/gh/Franckeddy/blog-for-a-writer.svg?style=svg)](https://circleci.com/gh/Franckeddy/blog-for-a-writer)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2866e5a514004498b463c49e0ec00b71)](https://app.codacy.com/app/Franckeddy/blog-for-a-writer?utm_source=github.com&utm_medium=referral&utm_content=Franckeddy/blog-for-a-writer&utm_campaign=Badge_Grade_Settings)
 
 Simple blog application in PHP with a MySQL database. Frontend interface (ticket reading) and a backend interface (ticket administration for writing).
@@ -45,10 +46,16 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+**[Codacy](https://app.codacy.com/)** is an automated code analysis/quality tool that helps developers ship better software, faster. With Codacy, you get static analysis, cyclomatic complexity, duplication and code unit test coverage changes in every commit and pull request.
+
+You can use Codacy to enforce your code quality standard, save time in code reviews, enforce security best practices and onboard developers faster. Integrate with your GitHub repositories to get quality analysis of every pull request inside GitHub.
 
 ```
-Give an example
+_Integrated in your workflow_
+ Codacy adapts to your code review process, pushing results as comments in your pull requests and commits into your workflow in GitHub.
+
+_Track your quality evolution_
+ Get a code quality glance at your project and track its quality evolution over time, easily paying back your technical debt.Give an example
 ```
 
 ## Deployment
@@ -59,6 +66,7 @@ Add additional notes about how to deploy this on a live system
 
 * [PhpStorm](https://www.jetbrains.com/phpstorm/) - The Lightning-Smart PHP IDE
 * [Circleci](https://circleci.com/) - Continuous integration and delivery platform 
+* [Codacy](https://app.codacy.com/) - Automates code reviews and monitors code quality 
 * [fish](https://fishshell.com/) - Command line shell for Linux, macOS, and the rest of the family. 
 
 ## Versioning
