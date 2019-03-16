@@ -73,5 +73,4 @@ class Form
         return $this->surround(
             '<input type="' .$type. '" name="' . $name . '" value="' . $this->getValue($name) . '">');
     }
-
 }

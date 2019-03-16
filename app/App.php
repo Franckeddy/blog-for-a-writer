@@ -11,9 +11,9 @@ class App
 
     public static function getInstance()
     {
-        if (is_null(self::$_instance))
+        if (self::$_instance === null)
         {
-            self::$_instance = new App();
+            self::$_instance = new self();
         }
         return self::$_instance;
     }
@@ -27,7 +27,7 @@ class App
     public function getDb()
     {
         $config = Config::getInstance(ROOT . '/config/config.php');
-        if (is_null($this->db_instance))
+        if ($this->db_instance === null)
         {
             $this->db_instance = new MysqlDatabase(
             $config->get('db_name'),

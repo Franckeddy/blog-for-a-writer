@@ -10,17 +10,19 @@ Readers can "flag" comments to make it easier to navigate through the admin inte
 Password protected administration interface. Writing of banknotes in a WYSIWYG interface based on TinyMCE.
 
 Develop in PHP without using a framework. Code built on an MVC architecture.
+
+## Table of Contents
+
+* [Certifications](#certifications)
+* [The Learning Platform](#the-learning-platform)
+* [Found a Bug](#found-a-bug)
+* [Found a Security Issue](#found-a-security-issue)
+* [Contributing](#contributing)
+* [License](#license)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
 
 ### Installing
 

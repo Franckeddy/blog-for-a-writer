@@ -15,11 +15,11 @@ class PostTable extends Table
      */
     public function last()
     {
-        return $this->query("
+        return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
         FROM billets
         LEFT JOIN categories ON category_id = categories.id
-        ORDER BY billets.date DESC");
+        ORDER BY billets.date DESC');
     }
 
     /**
@@ -29,11 +29,11 @@ class PostTable extends Table
      */
     public function findWithCategory($id)
     {
-        return $this->query("
+        return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
         FROM billets
         LEFT JOIN categories ON category_id = categories.id
-        WHERE billets.id = ?", [$id], true);
+        WHERE billets.id = ?', [$id], true);
     }
 
     /**
@@ -43,11 +43,11 @@ class PostTable extends Table
      */
     public function lastByCategory($category_id)
     {
-        return $this->query("
+        return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
         FROM billets
         LEFT JOIN categories ON category_id = categories.id
         WHERE billets.category_id = ?
-        ORDER BY billets.date DESC", [$category_id]);
+        ORDER BY billets.date DESC', [$category_id]);
     }
 }

@@ -16,8 +16,8 @@ class Table
     public function __construct(Database $db)
     {
         $this->db = $db;
-
-        if (is_null($this->table)) {
+        if ($this->table === null)
+        {
             $parts = explode('\\', get_class($this));
             $class_name = end($parts);
             $this->table = strtolower(str_replace('Table', '', $class_name)) . 's';
@@ -56,8 +56,7 @@ class Table
         }
         $attributes[] = $id;
         $sql_part = implode(', ', $sql_parts);
-
-        return $this->query("UPDATE {$this->table} SET $sql_part WHERE id = ?", $attributes, true);
+        return $this->query('UPDATE {$this->table} SET $sql_part WHERE id = ?', $attributes, true);
     }
 
     /**
@@ -126,5 +125,4 @@ class Table
             );
         }
     }
-
 }

@@ -1,3 +1,6 @@
+<?php
+$form = new \Core\HTML\BootstrapForm($_POST);
+?>
 <?php if($errors): ?>
     <div class="alert alert-danger">
         Identifiants incorrects

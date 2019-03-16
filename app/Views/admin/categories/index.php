@@ -1,9 +1,7 @@
 <h1>Administrer les categories</h1>
-
 <p>
-    <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
+    <a href="?p=admin.categories.edit" class="btn btn-success">Ajouter</a>
 </p>
-
 <table class="table">
     <thead>
     <tr>
@@ -18,7 +16,7 @@
             <td><?= $category->id; ?></td>
             <td><?= $category->title; ?></td>
             <td>
-                <a class="btn btn-primary" href="?p=admin.categories.edit&id=<? $category->id; ?>">Editer</a>
+                <a class="btn btn-primary" href="?p=admin.categories.edit&id=<?= $category->id; ?>">Editer</a>
 
                 <form action="?p=admin.categories.delete" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $category->id ?>">

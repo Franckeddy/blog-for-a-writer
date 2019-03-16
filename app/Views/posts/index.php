@@ -18,14 +18,13 @@
         <?php endforeach; ?>
     </div>
     <div class="col-sm-2">
-        <div class="container"><h2>Catégories</h2></div>
+        <div class="container"><h3>Catégories</h3></div>
         <ul>
             <?php foreach ($categories as $categorie): ?>
                 <li>
-                    <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
+                    <a href="<?= $categories->url; ?>"><?= $categorie->title; ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
     </div>
 </div>
-

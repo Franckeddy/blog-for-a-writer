@@ -34,7 +34,7 @@ class MysqlDatabase extends Database
     {
         if ($this->pdo === null) {
             $pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             $this->pdo = $pdo;
         }
         return $this->pdo;
@@ -107,7 +107,6 @@ class MysqlDatabase extends Database
         } else {
             $datas = $req->fetchAll();
         }
-
         return $datas;
     }
 

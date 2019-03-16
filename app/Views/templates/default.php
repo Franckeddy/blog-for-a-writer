@@ -13,7 +13,6 @@
     <link href="public/css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="public/css/bootstrap-reboot.min.csss" rel="stylesheet">
 
-
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 </head>
@@ -34,6 +33,11 @@
                 <a class="text-white h4" href="#">Catégories</a>
                 <span class="text-muted">Liste des Catégories.</span>
             </div>
+            <ul class="nav">
+                <?php foreach ($pages as $p): ?>
+                    <li><a href="<?= BASE-URL.'/pages/view/'.$p->id; ?>" title="<?= $p->name; ?>"><?= $p->name; ?>/a> </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
         <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +62,6 @@
     </div>
 
 <!-- Optional JavaScript -->
-<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

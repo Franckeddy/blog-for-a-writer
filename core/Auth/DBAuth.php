@@ -8,8 +8,8 @@ use Core\Database\Database;
  * Class DBAuth
  * @package Core\Auth
  */
-class DBAuth{
-
+class DBAuth
+{
     /**
      * @var Database
      */
@@ -64,5 +64,4 @@ class DBAuth{
         }
         return false;
     }
-
 }

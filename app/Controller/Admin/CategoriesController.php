@@ -42,7 +42,6 @@ class CategoriesController extends AppController
         $category = $this->Category->find($_GET['id']);
         $form = new BootstrapForm($category);
         $this->render('admin.categories.edit', compact('form'));
-
     }
 
     public function delete()

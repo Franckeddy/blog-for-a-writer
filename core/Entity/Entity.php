@@ -10,5 +10,4 @@ class Entity
         $this->$key = $this->$methode;
         return $this->$key;
     }
-
 }
