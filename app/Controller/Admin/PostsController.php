@@ -11,6 +11,7 @@ class PostsController extends AppController
     {
         parent::__construct();
         $this->loadModel('Post');
+        $this->loadModel('Category');
     }
 
     public function index()

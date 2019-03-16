@@ -38,7 +38,7 @@ class Table
      */
     public function find($id)
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
+        return $this->query('SELECT * FROM {$this->table} WHERE id = ?', [$id], true);
     }
 
     /**
@@ -93,7 +93,8 @@ class Table
     {
         $records = $this->all();
         $return = [];
-        foreach ($records as $v) {
+        foreach ($records as $v)
+        {
             $return[$v->$key] = $v->$value;
         }
         return $return;

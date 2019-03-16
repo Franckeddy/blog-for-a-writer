@@ -1,5 +1,5 @@
 <?php
-define('ROOT', dirname(__DIR__));
+define('ROOT', dirname(__DIR__)); // Webroot de l'application
 
 require ROOT . '/app/App.php';
 App::load();

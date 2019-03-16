@@ -11,7 +11,9 @@
     </tr>
     </thead>
     <tbody>
-        <?php foreach ($items as $category): ?>
+    <?= var_dump($items, $category); ?>
+
+    <?php foreach ($items as $category): ?>
         <tr>
             <td><?= $category->id; ?></td>
             <td><?= $category->title; ?></td>
@@ -24,6 +26,6 @@
                 </form>
             </td>
         </tr>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
     </tbody>
 </table>

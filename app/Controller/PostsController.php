@@ -7,6 +7,9 @@ use \App;
 
 class PostsController extends AppController
 {
+    /**
+     * PostsController constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -14,12 +17,18 @@ class PostsController extends AppController
         $this->loadModel('Category');
     }
 
+    /**
+     *
+     */
     public function index(){
-        $billets = $this->Post->last();
+        $posts = $this->Post->last();
         $categories = $this->Category->all();
-        $this->render('posts/index', compact('posts', 'categories'));
+        $this->render('posts.index', compact('posts', 'categories'));
     }
 
+    /**
+     *
+     */
     public function category()
     {
         $categorie = $this->Category->find($_GET['id']);
@@ -32,6 +41,9 @@ class PostsController extends AppController
         $this->render('posts.category', compact('billets', 'categories', 'categorie'));
     }
 
+    /**
+     *
+     */
     public function show(){
         $billet = $this->Post->findWithCategory($_GET['id']);
         $this->render('posts.show', compact('billet'));

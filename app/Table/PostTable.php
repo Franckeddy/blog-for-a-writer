@@ -23,6 +23,20 @@ class PostTable extends Table
     }
 
     /**
+     * Récupére un article en liant la catégorie associé
+     * @param $id int
+     * @return \App\Entity\PostEntity
+     */
+    public function find($id)
+    {
+        return $this->query('
+        SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
+        FROM billets
+        LEFT JOIN categories ON category_id = categories.id
+        WHERE billets.id = ?', [$id], true);
+    }
+
+    /**
      * Récupére un article en liant la catégorie associée
      * @param $id int
      * @return \App\Entity\PostEntity

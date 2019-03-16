@@ -9,6 +9,9 @@ class App
     private $db_instance;
     private static $_instance;
 
+    /**
+     * @return App
+     */
     public static function getInstance()
     {
         if (self::$_instance === null)
@@ -18,12 +21,19 @@ class App
         return self::$_instance;
     }
 
+    /**
+     * @param $name
+     * @return mixed
+     */
     public function getTable($name)
     {
         $class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
         return new $class_name($this->getDb());
     }
 
+    /**
+     * @return MysqlDatabase
+     */
     public function getDb()
     {
         $config = Config::getInstance(ROOT . '/config/config.php');
@@ -38,6 +48,9 @@ class App
         return $this->db_instance;
     }
 
+    /**
+     *
+     */
     public static function load()
     {
         session_start();

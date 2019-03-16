@@ -22,7 +22,7 @@
         <ul>
             <?php foreach ($categories as $categorie): ?>
                 <li>
-                    <a href="<?= $categories->url; ?>"><?= $categorie->title; ?></a>
+                    <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -1,5 +1,7 @@
 <div class="row">
     <div class="col-sm-8">
+        <?= var_dump($billets, $post); ?>)
+
         <?php foreach ($billets as $post): ?>
             <h2>
                 <a href="<?= $post->url; ?>"><?= $post->title; ?></a>

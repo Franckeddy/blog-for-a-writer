@@ -13,12 +13,12 @@ Develop in PHP without using a framework. Code built on an MVC architecture.
 
 ## Table of Contents
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
-* [Found a Bug](#found-a-bug)
-* [Found a Security Issue](#found-a-security-issue)
-* [Contributing](#contributing)
-* [License](#license)
+*  [Certifications](#certifications)
+*  [The Learning Platform](#the-learning-platform)
+*  [Found a Bug](#found-a-bug)
+*  [Found a Security Issue](#found-a-security-issue)
+*  [Contributing](#contributing)
+*  [License](#license)
 
 ## Getting Started
 

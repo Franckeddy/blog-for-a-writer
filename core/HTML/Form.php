@@ -42,7 +42,7 @@ class Form
     /**
      * Index de la valeur à recupérer
      * @param $index
-     * @return mixed|null
+     * @return string
      */
     protected function getValue($index)
         {
@@ -62,7 +62,7 @@ class Form
         }
 
     /**
-     * @param $name
+     * @param $name string
      * @param $label
      * @param array $options
      * @return string
@@ -72,5 +72,26 @@ class Form
         $type = isset($options['type']) ? $options['type'] : 'text';
         return $this->surround(
             '<input type="' .$type. '" name="' . $name . '" value="' . $this->getValue($name) . '">');
+    }
+
+    /**
+     * @param $name
+     * @param $label
+     * @param $options
+     * @return string
+     */
+    public function select($name, $label, $options)
+    {
+        $label = '<label>' . $label . '</label>';
+        $input = '<select class="form-control" name="' . $name . '">';
+        foreach ($options as $k => $v){
+            $attributes = '';
+            if ($k === $this->getValue($name)){
+                $attributes = ' selected';
+            }
+            $input .= "<option value= '$k' $attributes >$v</option>";
+        }
+        $input = '</select>';
+        return $this->surround($label . $input);
     }
 }
