@@ -6,6 +6,19 @@ use Core\Entity\Entity;
 
 class PostEntity extends Entity
 {
+    public $dateFr;
+
+    public function __construct()
+    {
+        $this->dateFr = $this->dateFr();
+    }
+
+    private function dateFr()
+    {
+        $d = $this->date;
+        return substr( $d, 8, 2 ) . '/' . substr( $d, 5, 2 ) . '/' . substr( $d, 0, 4 ) . substr( $d, 10 );
+    }
+
     /**
      * @return string
      */

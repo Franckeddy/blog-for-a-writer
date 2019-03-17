@@ -38,7 +38,7 @@ class Table
      */
     public function find($id)
     {
-        return $this->query('SELECT * FROM {$this->table} WHERE id = ?', [$id], true);
+        return $this->query( 'SELECT * FROM ' . $this->table . ' WHERE id = ?', [ $id ], true );
     }
 
     /**
@@ -65,7 +65,7 @@ class Table
      */
     public function delete($id)
     {
-        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
+        return $this->query( 'DELETE FROM ' . $this->table . ' WHERE id = ?', [ $id ] );
     }
 
     /**
@@ -77,11 +77,11 @@ class Table
         $sql_parts = [];
         $attributes = [];
         foreach ($fields as $k => $v){
-            $sql_parts[] = "$k = ?";
+            $sql_parts[] = $k . ' = ?';
             $attributes[] = $v;
         }
         $sql_part = implode(', ', $sql_parts);
-        return $this->query("INSERT INTO {$this->table} SET $sql_part", $attributes, true);
+        return $this->query('INSERT INTO ' . $this->table . ' SET ' . $sql_part, $attributes, true);
     }
 
     /**
@@ -127,3 +127,7 @@ class Table
         }
     }
 }
+/*public function delete($id)
+{
+    return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
+}*/

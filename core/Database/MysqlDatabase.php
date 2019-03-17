@@ -10,6 +10,9 @@ class MysqlDatabase extends Database
     private $db_user;
     private $db_password;
     private $db_host;
+    /**
+     * @var \PDO
+     */
     private $pdo;
 
     /**
@@ -33,7 +36,8 @@ class MysqlDatabase extends Database
     private function getPDO()
     {
         if ($this->pdo === null) {
-            $pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
+            //$pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
+            $pdo = new PDO( 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host, $this->db_user, $this->db_password );
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             $this->pdo = $pdo;
         }

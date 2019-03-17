@@ -29,7 +29,7 @@ class PostsController extends AppController
     /**
      *
      */
-    public function category()
+    public function categories()
     {
         $categorie = $this->Category->find($_GET['id']);
         if ($categorie === false)
@@ -45,7 +45,7 @@ class PostsController extends AppController
      *
      */
     public function show(){
-        $billet = $this->Post->findWithCategory($_GET['id']);
-        $this->render('posts.show', compact('billet'));
+        $post = $this->Post->findWithCategory($_GET['id']);
+        $this->render('posts.show', compact('post'));
     }
 }

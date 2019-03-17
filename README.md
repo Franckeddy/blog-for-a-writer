@@ -26,26 +26,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-```
-Give an example
-```
-
 ### And coding style tests
 
 **[Codacy](https://app.codacy.com/)** is an automated code analysis/quality tool that helps developers ship better software, faster. With Codacy, you get static analysis, cyclomatic complexity, duplication and code unit test coverage changes in every commit and pull request.
@@ -65,7 +45,6 @@ _Track your quality evolution_
 CircleCI build dashboard shows all recent builds in one place. Filter by "My builds" or "All builds" to find what you're looking for faster.
 ```
 
-
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
@@ -82,5 +61,3 @@ I use [GitHub](https://github.com/) - Web-based version-control and collaboratio
 ## Authors
 
 * [**Franck GARCON**](https://github.com/Franckeddy)
-
-

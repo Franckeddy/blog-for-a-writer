@@ -33,11 +33,13 @@
                 <a class="text-white h4" href="#">Catégories</a>
                 <span class="text-muted">Liste des Catégories.</span>
             </div>
-            <!--<ul class="nav">
+            <!--<div class="bg-dark p-4">
+            <ul class="nav">
                 <?php /*foreach ($pages as $p): */?>
-                    <li><a href="<?/*= BASE-URL.'/pages/view/'.$p->id; */?>" title="<?/*= $p->name; */?>"><?/*= $p->name; */?>/a> </li>
+                    <li><a href="<?/*= ROOT.'/pages/view/'.$p->id; */?>" title="<?/*= $p->name; */?>"><?/*= $p->name; */?>/a> </li>
                 <?php /*endforeach; */?>
-            </ul>-->
+            </ul>
+            </div>-->
         </div>
         <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">

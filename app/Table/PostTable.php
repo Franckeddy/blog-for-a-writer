@@ -25,7 +25,7 @@ class PostTable extends Table
     /**
      * Récupére un article en liant la catégorie associé
      * @param $id int
-     * @return \App\Entity\PostEntity
+     * @return array
      */
     public function find($id)
     {

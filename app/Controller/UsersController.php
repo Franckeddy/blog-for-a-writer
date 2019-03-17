@@ -9,6 +9,9 @@ use \App;
 
 class UsersController extends AppController
 {
+    /**
+     *
+     */
     public function login()
     {
         $errors = false;

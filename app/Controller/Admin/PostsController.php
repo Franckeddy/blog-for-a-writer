@@ -7,6 +7,9 @@ use App;
 
 class PostsController extends AppController
 {
+    /**
+     * PostsController constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -14,12 +17,18 @@ class PostsController extends AppController
         $this->loadModel('Category');
     }
 
+    /**
+     *
+     */
     public function index()
     {
        $items = $this->Post->all();
        $this->render('admin.posts.index', compact('items'));
     }
 
+    /**
+     *
+     */
     public function add()
     {
         if (!empty($_POST)){
@@ -33,12 +42,14 @@ class PostsController extends AppController
                 return $this->index();
             }
         }
-        $this->loadModel('Category');
         $categories = $this->Category->extract('id', 'title');
         $form = new BootstrapForm($_POST);
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
 
+    /**
+     *
+     */
     public function edit()
     {
         if (!empty($_POST)){
@@ -53,12 +64,14 @@ class PostsController extends AppController
             }
         }
         $post = $this->Post->find($_GET['id']);
-        $this->loadModel('Category');
         $categories = $this->Category->extract('id', 'title');
         $form = new BootstrapForm($post);
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
 
+    /**
+     *
+     */
     public function delete()
     {
         if (!empty($_POST))

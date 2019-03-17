@@ -1,18 +1,21 @@
 <div class="row">
     <div class="col-sm-8">
-        <?= var_dump($billets, $post); ?>)
-
-        <?php foreach ($billets as $post): ?>
-            <h2>
-                <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
-            </h2>
-            <p>
-                <em><?= $post->categorie; ?></em>
-            </p>
-            <p>
-                <?= $post->extrait; ?>
-            </p>
-        <?php endforeach; ?>
+        <?php
+		if ($billets )
+		{foreach ($billets as $post): ?>
+                <h2>
+                    <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
+                </h2>
+                <p>
+                    <em><?= $post->categorie; ?></em>
+                </p>
+                <p>
+                    <?= $post->extrait; ?>
+                </p>
+            <?php endforeach;
+        }
+        else echo '<h4>Aucun article dans cette rubrique</h4>';
+        ?>
     </div>
     <div class="col-sm-4">
         <ul>

@@ -25,7 +25,7 @@ class Form
      * Données utilisées par le formulaire
      * @param array $data
      */
-    public function __construct($data = array())
+    public function __construct($data = [])
         {
             $this->data = $data;
         }
@@ -50,7 +50,7 @@ class Form
             {
                 return $this->data->$index;
             }
-            return isset($this->data[$index]) ? $this->data[$index] : null;
+            return isset($this->data[$index]) ?? null;
         }
 
     /**
@@ -61,17 +61,16 @@ class Form
             return $this->surround('<button type="submit">Envoyer</button>');
         }
 
-    /**
-     * @param $name string
-     * @param $label
-     * @param array $options
-     * @return string
-     */
-    public function input($name, $label, $options = [])
+
+    public function input($champs, $label = null, $options = [ ] )
     {
-        $type = isset($options['type']) ? $options['type'] : 'text';
-        return $this->surround(
-            '<input type="' .$type. '" name="' . $name . '" value="' . $this->getValue($name) . '">');
+        $label = $label ?? $champs;
+        $type  = $options[ 'type' ] ?? 'text';
+        return $this->surround
+        (
+            '<label for "' . $champs . '">' . ucfirst( $label ) . '</label>
+		    <input type="' . $type . '" name="' . $champs . '" id="' . $champs . '" value="' . $this->getValue( $champs ) . '" />'
+        );
     }
 
     /**
@@ -95,3 +94,12 @@ class Form
         return $this->surround($label . $input);
     }
 }
+
+/*public function input($name, $label, $options = [])
+{
+    $type = isset($options['type']) ? $options['type'] : 'text';
+    return $this->surround
+    (
+        '<input type="' .$type. '" name="' . $name . '" value="' . $this->getValue($name) . '">'
+    );
+}*/

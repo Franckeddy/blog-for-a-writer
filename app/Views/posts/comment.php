@@ -39,7 +39,6 @@ $comments = $comments_cls->findAll('posts', $post->id);
 ?>
 <?= $post=content; ?>
 
-
 <h2><?= count($comments); ?> Commentaires</h2>
 <?php if ($errors): ?>
 <div class="alert alert-danger">

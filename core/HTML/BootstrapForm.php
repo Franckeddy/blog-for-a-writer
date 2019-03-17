@@ -15,8 +15,8 @@ class BootstrapForm extends Form
     }
 
     /**
-     * @param $name string
-     * @param $label
+     * @param $name
+     * @param $label string
      * @param array $options
      * @return string
      */

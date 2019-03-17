@@ -16,7 +16,7 @@ class App
     {
         if (self::$_instance === null)
         {
-            self::$_instance = new self();
+            self::$_instance = new App();
         }
         return self::$_instance;
     }
@@ -27,7 +27,7 @@ class App
      */
     public function getTable($name)
     {
-        $class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
+        $class_name = '\\App\\Table\\' . ucfirst(strtolower($name)) . 'Table';
         return new $class_name($this->getDb());
     }
 
@@ -48,9 +48,6 @@ class App
         return $this->db_instance;
     }
 
-    /**
-     *
-     */
     public static function load()
     {
         session_start();

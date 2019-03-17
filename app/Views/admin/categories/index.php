@@ -11,15 +11,12 @@
     </tr>
     </thead>
     <tbody>
-    <?= var_dump($items, $category); ?>
-
-    <?php foreach ($items as $category): ?>
+    <?php foreach ($categories as $category): ?>
         <tr>
             <td><?= $category->id; ?></td>
             <td><?= $category->title; ?></td>
             <td>
                 <a class="btn btn-primary" href="?p=admin.categories.edit&id=<?= $category->id; ?>">Editer</a>
-
                 <form action="?p=admin.categories.delete" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $category->id ?>">
                 <button type="submit" class="btn btn-danger">Supprimer</button>
