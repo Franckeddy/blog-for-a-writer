@@ -45,12 +45,12 @@ class Form
      * @return string
      */
     protected function getValue($index)
-        {
+    {
             if (is_object($this->data))
             {
                 return $this->data->$index;
             }
-            return isset($this->data[$index]) ?? null;
+            return isset($this->data[$index]) ? $this->data[$index] : null;
         }
 
     /**
@@ -61,45 +61,17 @@ class Form
             return $this->surround('<button type="submit">Envoyer</button>');
         }
 
-
-    public function input($champs, $label = null, $options = [ ] )
-    {
-        $label = $label ?? $champs;
-        $type  = $options[ 'type' ] ?? 'text';
-        return $this->surround
-        (
-            '<label for "' . $champs . '">' . ucfirst( $label ) . '</label>
-		    <input type="' . $type . '" name="' . $champs . '" id="' . $champs . '" value="' . $this->getValue( $champs ) . '" />'
-        );
-    }
-
     /**
      * @param $name
-     * @param $label
-     * @param $options
+     * @param array $options
      * @return string
      */
-    public function select($name, $label, $options)
+    public function input($name, $label, $options = [])
     {
-        $label = '<label>' . $label . '</label>';
-        $input = '<select class="form-control" name="' . $name . '">';
-        foreach ($options as $k => $v){
-            $attributes = '';
-            if ($k === $this->getValue($name)){
-                $attributes = ' selected';
-            }
-            $input .= "<option value= '$k' $attributes >$v</option>";
-        }
-        $input = '</select>';
-        return $this->surround($label . $input);
+        $type = isset($options['type']) ? $options['type'] : 'text';
+        return $this->surround
+        (
+            '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '">'
+        );
     }
 }
-
-/*public function input($name, $label, $options = [])
-{
-    $type = isset($options['type']) ? $options['type'] : 'text';
-    return $this->surround
-    (
-        '<input type="' .$type. '" name="' . $name . '" value="' . $this->getValue($name) . '">'
-    );
-}*/

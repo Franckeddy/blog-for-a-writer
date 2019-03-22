@@ -11,13 +11,7 @@ define('ROOT', dirname(__DIR__));
 require ROOT . '/app/App.php';
 App::load();
 
-if (isset($_GET['p']))
-{
-    $page = $_GET['p'];
-}
-else{
-    $page = 'posts.index';
-}
+$page = $_GET['p'] ?? 'posts.index';
 
 $page = explode('.', $page);
 

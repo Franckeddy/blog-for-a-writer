@@ -8,7 +8,7 @@ class MysqlDatabase extends Database
 {
     private $db_name;
     private $db_user;
-    private $db_password;
+    private $db_pass;
     private $db_host;
     /**
      * @var \PDO
@@ -19,25 +19,25 @@ class MysqlDatabase extends Database
      * MysqlDatabase constructor.
      * @param $db_name
      * @param string $db_user
-     * @param string $db_password
+     * @param string $db_pass
      * @param string $db_host
      */
-    public function __construct($db_name, $db_user = 'root', $db_password = 'root', $db_host = 'localhost')
+    public function __construct($db_name = 'blog', $db_user = 'root', $db_pass = 'root', $db_host = 'localhost')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
-        $this->db_password = $db_password;
+        $this->db_pass = $db_pass;
         $this->db_host = $db_host;
     }
 
     /**
      * @return PDO
      */
-    private function getPDO()
+    private function getPDO(): PDO
     {
         if ($this->pdo === null) {
             //$pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
-            $pdo = new PDO( 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host, $this->db_user, $this->db_password );
+            $pdo = new PDO( 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host, $this->db_user, $this->db_pass );
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             $this->pdo = $pdo;
         }
@@ -124,7 +124,7 @@ class MysqlDatabase extends Database
      * Fonction de PDO, retourne l'id du dernier enregistrement effectué par PDO
      * @return string
      */
-    public function lastInsertId()
+    public function lastInsertId(): string
     {
         return $this->getPDO()->lastInsertId();
     }

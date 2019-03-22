@@ -13,7 +13,7 @@ class PostTable extends Table
      * Récupére les derniers articles
      * @return array
      */
-    public function last()
+    public function last(): array
     {
         return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
@@ -22,26 +22,26 @@ class PostTable extends Table
         ORDER BY billets.date DESC');
     }
 
-    /**
-     * Récupére un article en liant la catégorie associé
-     * @param $id int
-     * @return array
-     */
-    public function find($id)
-    {
-        return $this->query('
-        SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
-        FROM billets
-        LEFT JOIN categories ON category_id = categories.id
-        WHERE billets.id = ?', [$id], true);
-    }
+//    /**
+//     * Récupére un article en liant la catégorie associé
+//     * @param $id int
+//     * @return array
+//     */
+//    public function find($id): array
+//    {
+//        return $this->query('
+//        SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
+//        FROM billets
+//        LEFT JOIN categories ON category_id = categories.id
+//        WHERE billets.id = ?', [$id], true);
+//    }
 
     /**
      * Récupére un article en liant la catégorie associée
      * @param $id int
      * @return \App\Entity\PostEntity
      */
-    public function findWithCategory($id)
+    public function findWithCategory($id): \App\Entity\PostEntity
     {
         return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
@@ -55,7 +55,7 @@ class PostTable extends Table
      * @param $category_id int
      * @return array
      */
-    public function lastByCategory($category_id)
+    public function lastByCategory($category_id): array
     {
         return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie

@@ -7,7 +7,11 @@ use Core\HTML\BootstrapForm;
 use Core\Auth\DBAuth;
 use \App;
 
-class UsersController extends AppController
+/**
+ * Class UsersController
+ * @package App\Controller
+ */
+class LoginController extends AppController
 {
     /**
      *

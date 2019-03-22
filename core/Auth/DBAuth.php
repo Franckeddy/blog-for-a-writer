@@ -25,19 +25,27 @@ class DBAuth
     }
 
     /**
+     * @return bool
+     */
+    public function getUserId(): bool
+    {
+        if ($this->logged())
+        {
+            return $_SESSION['auth'];
+        }
+        return false;
+    }
+
+    /**
      * @param $username
      * @param $password
      * @return boolean
      */
-    public function login($username, $password)
+    public function login($username, $password): bool
     {
-        $user = $this->db->prepare('SELECT * FROM users WHERE username = ?', [$username], null, true);
-        var_dump(sha1('demo'));
-        var_dump($user);
-        if ($user)
-        {
-            if ($user->password === sha1($password))
-            {
+        $user = $this->db->prepare('SELECT * FROM users WHERE username =?', [$username], null, true);
+        if($user){
+            if($user->password === sha1($password)){
                 $_SESSION['auth'] = $user->id;
                 return true;
             }
@@ -48,20 +56,8 @@ class DBAuth
     /**
      * @return bool
      */
-    public function logged()
+    public function logged(): bool
     {
         return isset($_SESSION['auth']);
-    }
-
-    /**
-     * @return bool
-     */
-    public function getUserId()
-    {
-        if ($this->logged())
-        {
-            return $_SESSION['auth'];
-        }
-        return false;
     }
 }

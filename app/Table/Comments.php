@@ -2,10 +2,13 @@
 
 namespace app\Table;
 
+/**
+ * @property array options
+ */
 class Comments
 {
     private $pdo;
-    private $options = array(
+    private static $options = array(
         'username_error' => 'Vous n\'avez pas renseigner votre Pseudo',
         'email_error' => 'Votre email est incorrect',
         'content_error' => 'Vous n\'avez pas renseigner votre Contenu'
@@ -24,13 +27,14 @@ class Comments
      * @param $ref_id
      * @return mixed
      */
-    public function findAll($ref, $ref_id){
+    public function findAll($ref, $ref_id)
+    {
         $q = $this->pdo->prepare('
         SELECT * 
         FROM ref_id = :ref_id
         AND ref = :references ORDER BY created DESC 
         ');
-        $p->execute(['ref' => $ref, 'ref_id' => $ref_id]);
+        $q->execute(['ref' => $ref, 'ref_id' => $ref_id]);
         return $q->fetchAll();
     }
 
@@ -40,7 +44,7 @@ class Comments
      * @param $ref_id
      * @return bool
      */
-    public function save($ref, $ref_id)
+    public function save($ref, $ref_id): bool
     {
         $errors = [];
         if (empty($_POST['username'])){

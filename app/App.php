@@ -12,9 +12,9 @@ class App
     /**
      * @return App
      */
-    public static function getInstance()
+    public static function getInstance(): \App
     {
-        if (self::$_instance === null)
+        if(is_null(self::$_instance))
         {
             self::$_instance = new App();
         }
@@ -27,14 +27,14 @@ class App
      */
     public function getTable($name)
     {
-        $class_name = '\\App\\Table\\' . ucfirst(strtolower($name)) . 'Table';
+        $class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
         return new $class_name($this->getDb());
     }
 
     /**
      * @return MysqlDatabase
      */
-    public function getDb()
+    public function getDb(): MysqlDatabase
     {
         $config = Config::getInstance(ROOT . '/config/config.php');
         if ($this->db_instance === null)

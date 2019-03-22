@@ -5,7 +5,7 @@ namespace Core;
 
 class Config
 {
-    private $settings = [];
+    private $settings;
     private static $_instance; // L'atribut qui stockera l'instance unique
 
     /**
@@ -27,7 +27,7 @@ class Config
      */
     public function __construct($file)
     {
-        $this->settings = require ($file);
+        $this->settings = require $file;
     }
 
     /**
@@ -37,6 +37,6 @@ class Config
      */
     public function get($key)
     {
-        return $this->settings[ $key ] ?? null;
+        return $this->settings[$key] ?? null;
     }
 }

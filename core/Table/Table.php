@@ -38,7 +38,7 @@ class Table
      */
     public function find($id)
     {
-        return $this->query( 'SELECT * FROM ' . $this->table . ' WHERE id = ?', [ $id ], true );
+        return $this->query( "SELECT * FROM {$this->table} WHERE id = ?", [ $id ], true );
     }
 
     /**
@@ -56,7 +56,7 @@ class Table
         }
         $attributes[] = $id;
         $sql_part = implode(', ', $sql_parts);
-        return $this->query('UPDATE {$this->table} SET $sql_part WHERE id = ?', $attributes, true);
+        return $this->query("UPDATE {$this->table} SET $sql_part WHERE id = ?", $attributes, true);
     }
 
     /**
@@ -65,7 +65,7 @@ class Table
      */
     public function delete($id)
     {
-        return $this->query( 'DELETE FROM ' . $this->table . ' WHERE id = ?', [ $id ] );
+        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
     /**
@@ -77,11 +77,11 @@ class Table
         $sql_parts = [];
         $attributes = [];
         foreach ($fields as $k => $v){
-            $sql_parts[] = $k . ' = ?';
+            $sql_parts[] = "$k = ?";
             $attributes[] = $v;
         }
         $sql_part = implode(', ', $sql_parts);
-        return $this->query('INSERT INTO ' . $this->table . ' SET ' . $sql_part, $attributes, true);
+        return $this->query("INSERT INTO {$this->table} SET $sql_part", $attributes, true);
     }
 
     /**
@@ -89,7 +89,7 @@ class Table
      * @param $value
      * @return array
      */
-    public function extract($key, $value)
+    public function extract($key, $value): array
     {
         $records = $this->all();
         $return = [];
@@ -127,7 +127,3 @@ class Table
         }
     }
 }
-/*public function delete($id)
-{
-    return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
-}*/

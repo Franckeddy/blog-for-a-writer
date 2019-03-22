@@ -9,7 +9,7 @@ class BootstrapForm extends Form
      * @param $html
      * @return string
      */
-    protected function surround($html)
+    public function surround($html): string
     {
         return "<div class=\"form-group\">{$html}</div>";
     }
@@ -20,18 +20,17 @@ class BootstrapForm extends Form
      * @param array $options
      * @return string
      */
-    public function input($name, $label, $options = [])
+    public function input($name, $label, $options = []): string
     {
-        $type = isset($options['type']) ? $options['type'] : 'text;';
+        $type = isset($options['type']) ? $options['type'] : 'text';
         $label = '<label>' . $label . '</label>';
         if ($type === 'textarea')
         {
             $input = '<textarea name="' . $name . '" class="form-control">' . $this->getValue($name) . '</textarea>';
-
         }
         else
         {
-            $input = '<input type="' . $type . '" name="' . $name . '" value"' . $this->getValue($name) . '" class="form-control">';
+            $input = '<input type="' . $type . '" name="' . $name . '" value="' . $this->getValue($name) . '" class="form-control">';
         }
         return $this->surround($label . $input);
     }
@@ -39,7 +38,7 @@ class BootstrapForm extends Form
     /**
      * @return string
      */
-    public function submit()
+    public function submit(): string
     {
         return $this->surround('<button type="submit" class="btn btn-primary">Envoyer</button>');
     }
@@ -50,16 +49,17 @@ class BootstrapForm extends Form
      * @param $options
      * @return string
      */
-    public function select($name, $label, $options)
+    public function select($name, $label, $options): string
     {
         $label = '<label>' . $label . '</label>';
         $input = '<select class="form-control" name="' . $name . '">';
         foreach ($options as $k => $v){
             $attributes = '';
-            if ($k === $this->getValue($name)){
-                $attributes = ' selected';
+            if ($k === $this->getValue($name))
+            {
+                $attributes = 'selected';
             }
-            $input .= "<option value= '$k' $attributes >$v</option>";
+            $input .= "<option value='$k'$attributes>$v</option>";
         }
         $input = '</select>';
         return $this->surround($label . $input);
