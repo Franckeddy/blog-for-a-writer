@@ -50,7 +50,8 @@ class Table
     {
         $sql_parts = [];
         $attributes = [];
-        foreach ($fields as $k => $v){
+        foreach ($fields as $k => $v)
+        {
             $sql_parts[] = "$k = ?";
             $attributes[] = $v;
         }
@@ -89,7 +90,7 @@ class Table
      * @param $value
      * @return array
      */
-    public function extract($key, $value): array
+    public function extract($key, $value)
     {
         $records = $this->all();
         $return = [];

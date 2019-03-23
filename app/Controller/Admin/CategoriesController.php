@@ -21,8 +21,8 @@ class CategoriesController extends AppController
      */
     public function index()
     {
-       $categories = $this->Category->all();
-       $this->render('admin.categories.index', compact('categories'));
+        $categories = $this->Category->all();
+        $this->render('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -30,13 +30,11 @@ class CategoriesController extends AppController
      */
     public function add()
     {
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $result = $this->Category->create([
                 'title' => $_POST['title']
             ]);
-            if($result)
-            {
+            if ($result) {
                 return $this->index();
             }
         }
@@ -49,15 +47,14 @@ class CategoriesController extends AppController
      */
     public function edit()
     {
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $result = $this->Category->update($_GET['id'], [
                 'title' => $_POST['title'],
             ]);
-                return $this->index();
+            return $this->index();
         }
-        $category = $this->Category->find($_GET['id']);
-        $form = new BootstrapForm($category);
+        $categories = $this->Category->find($_GET['id']);
+        $form = new BootstrapForm($categories);
         $this->render('admin.categories.edit', compact('form'));
     }
 
@@ -66,10 +63,9 @@ class CategoriesController extends AppController
      */
     public function delete()
     {
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $result = $this->Category->delete($_POST['id']);
-                return $this->index();
+            return $this->index();
         }
     }
 }

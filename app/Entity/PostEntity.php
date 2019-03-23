@@ -11,23 +11,17 @@ use Core\Entity\Entity;
  */
 class PostEntity extends Entity
 {
-//    public $dateFr;
-//
-//    public function __construct()
-//    {
-//        $this->dateFr = $this->dateFr();
-//    }
-//
-//    private function dateFr(): string
-//    {
-//        $d = $this->date;
-//        return substr( $d, 8, 2 ) . '/' . substr( $d, 5, 2 ) . '/' . substr( $d, 0, 4 ) . substr( $d, 10 );
-//    }
+    public $dateFr;
+
+    public function __construct()
+    {
+        $this->dateFr = $this->dateFr();
+    }
 
     /**
      * @return string
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return 'index.php?p=posts.show&id=' . $this->id;
     }
@@ -35,10 +29,48 @@ class PostEntity extends Entity
     /**
      * @return string
      */
-    public function getExtrait(): string
+    public function getExtrait()
     {
         $html = '<p>' . substr($this->content, 0, 300) . '...</p>';
         $html .= '<p><a class="btn btn-outline-secondary" href="' . $this->getUrl() . '">Voir la suite</a></p>';
         return $html;
     }
+
+    public function getId()
+    {
+
+    }
+
+    public function getTitle()
+    {
+
+    }
+
+    public function getCategories()
+    {
+
+    }
+
+    public function getCategories_id()
+    {
+
+    }
+
+    public function getCategory_id()
+    {
+
+    }
+
+    public function getContent()
+    {
+
+    }
+
+    private function dateFr()
+    {
+        $d = $this->date;
+        return substr($d, 8, 2) . '/' . substr($d, 5, 2) . '/' . substr($d, 0, 4) . substr($d, 10);
+    }
+
+
 }

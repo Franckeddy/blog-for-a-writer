@@ -2,8 +2,11 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/.gitignore" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/app/Controller/CategoriesController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Table/CategoryTable.php" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/app/Table/UserTable.php" charset="US-ASCII" />
-    <file url="db://5d0cc071-6e1e-4bc0-8741-e7057276a765/consoles/Connection" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/app/Views/templates/assets/css/starter-template.css" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/core/Database/Database.php" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/public/assets/css/starter-template.css" charset="US-ASCII" />
   </component>
 </project>

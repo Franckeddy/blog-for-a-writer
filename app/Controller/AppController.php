@@ -35,6 +35,6 @@ class AppController extends Controller
     protected function setTitle($title)
     {
         $app = \App::getInstance();
-        $app->title=$title.' | '.$app->title;
+        $app->title = $title . ' | ' . $app->title;
     }
 }

@@ -11,23 +11,16 @@ use \App;
  * Class UsersController
  * @package App\Controller
  */
-class LoginController extends AppController
+class UsersController extends AppController
 {
-    /**
-     *
-     */
-    public function login()
+    public function login(): void
     {
         $errors = false;
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $auth = new DBAuth(App::getInstance()->getDb());
-            if($auth->login($_POST['username'], $_POST['password']))
-            {
+            if ($auth->login($_POST['username'], $_POST['password'])) {
                 header('location: index.php?p=admin.posts.index');
-            }
-            else
-            {
+            } else {
                 $errors = true;
             }
         }

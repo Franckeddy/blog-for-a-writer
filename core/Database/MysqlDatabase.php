@@ -37,7 +37,7 @@ class MysqlDatabase extends Database
     {
         if ($this->pdo === null) {
             //$pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', 'root');
-            $pdo = new PDO( 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host, $this->db_user, $this->db_pass );
+            $pdo = new PDO('mysql:dbname=' . $this->db_name . ';host=' . $this->db_host, $this->db_user, $this->db_pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             $this->pdo = $pdo;
         }
@@ -58,24 +58,17 @@ class MysqlDatabase extends Database
             strpos($statement, 'UPDATE') === 0 ||
             strpos($statement, 'INSERT') === 0 ||
             strpos($statement, 'DELETE') === 0
-        )
-        {
+        ) {
             return $req;
         }
-        if ($class_name === null)
-        {
+        if ($class_name === null) {
             $req->setFetchMode(PDO::FETCH_OBJ);
-        }
-        else
-        {
+        } else {
             $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
         }
-        if ($one)
-        {
+        if ($one) {
             $datas = $req->fetch();
-        }
-        else
-        {
+        } else {
             $datas = $req->fetchAll();
         }
         return $datas;
@@ -97,24 +90,17 @@ class MysqlDatabase extends Database
             strpos($statement, 'UPDATE') === 0 ||
             strpos($statement, 'INSERT') === 0 ||
             strpos($statement, 'DELETE') === 0
-        )
-        {
+        ) {
             return $res;
         }
-        if ($class_name === null)
-        {
+        if ($class_name === null) {
             $req->setFetchMode(PDO::FETCH_OBJ);
-        }
-        else
-        {
+        } else {
             $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
         }
-        if ($one)
-        {
+        if ($one) {
             $datas = $req->fetch();
-        }
-        else
-        {
+        } else {
             $datas = $req->fetchAll();
         }
         return $datas;

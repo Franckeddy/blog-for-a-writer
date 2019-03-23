@@ -11,13 +11,12 @@ class AppController extends \App\Controller\AppController
      * AppController constructor.
      */
     public function __construct()
-   {
-       parent::__construct();
-       $app = App::getInstance();
-       $auth = new DBAuth($app->getDb());
-       if (!$auth->logged())
-       {
-           $this->forbidden();
-       }
-   }
+    {
+        parent::__construct();
+        $app = App::getInstance();
+        $auth = new DBAuth($app->getDb());
+        if (!$auth->logged()) {
+            $this->forbidden();
+        }
+    }
 }

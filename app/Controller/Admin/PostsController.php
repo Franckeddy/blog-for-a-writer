@@ -7,9 +7,6 @@ use App;
 
 class PostsController extends AppController
 {
-    /**
-     * PostsController constructor.
-     */
     public function __construct()
     {
         parent::__construct();
@@ -22,19 +19,15 @@ class PostsController extends AppController
         $this->render('admin.posts.index', compact('posts'));
     }
 
-    /**
-     *
-     */
     public function add()
     {
-        if (!empty($_POST)){
+        if (!empty($_POST)) {
             $result = $this->Post->create([
                 'title' => $_POST['title'],
                 'content' => $_POST['content'],
                 'category_id' => $_POST['category_id'],
             ]);
-            if($result)
-            {
+            if ($result) {
                 return $this->index();
             }
         }
@@ -44,20 +37,15 @@ class PostsController extends AppController
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
 
-    /**
-     *
-     */
     public function edit()
     {
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $result = $this->Post->update($_GET['id'], [
                 'title' => $_POST['title'],
                 'content' => $_POST['content'],
                 'category_id' => $_POST['category_id'],
             ]);
-            if($result)
-            {
+            if ($result) {
                 return $this->index();
             }
         }
@@ -68,15 +56,11 @@ class PostsController extends AppController
         $this->render('admin.posts.edit', compact('categories', 'form'));
     }
 
-    /**
-     *
-     */
     public function delete()
     {
-        if (!empty($_POST))
-        {
+        if (!empty($_POST)) {
             $result = $this->Post->delete($_POST['id']);
-                return $this->index();
+            return $this->index();
         }
     }
 }

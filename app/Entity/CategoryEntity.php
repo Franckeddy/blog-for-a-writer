@@ -6,7 +6,7 @@ use Core\Entity\Entity;
 
 class CategoryEntity extends Entity
 {
-    private $id;
+    public $id;
 
     /**
      * @return string
@@ -14,5 +14,15 @@ class CategoryEntity extends Entity
     public function getUrl(): string
     {
         return 'index.php?p=posts.categories&id=' . $this->id;
+    }
+
+    public function getId()
+    {
+
+    }
+
+    public function getTitle()
+    {
+
     }
 }

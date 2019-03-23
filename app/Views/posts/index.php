@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-10">
         <div class="container"><h1>Billets</h1></div>
-        <hr size="5" width=”100%” />
+        <hr size="5" width=”100%”/>
         <?php foreach ($posts as $post): ?>
             <div class="container">
                 <h2>
@@ -13,7 +13,7 @@
                 <p>
                     <?= $post->extrait; ?>
                 </p>
-                <hr size="5" width="50%" align=center />
+                <hr size="5" width="50%" align=center/>
             </div>
         <?php endforeach; ?>
     </div>

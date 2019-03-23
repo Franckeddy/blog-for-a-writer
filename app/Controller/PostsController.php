@@ -15,12 +15,11 @@ class PostsController extends AppController
         parent::__construct();
         $this->loadModel('Post');
         $this->loadModel('Category');
+        $this->loadModel('Comment');
     }
 
-    /**
-     *
-     */
-    public function index(){
+    public function index()
+    {
         $posts = $this->Post->last();
         $categories = $this->Category->all();
         $this->render('posts.index', compact('posts', 'categories'));
@@ -32,8 +31,7 @@ class PostsController extends AppController
     public function categories()
     {
         $categorie = $this->Category->find($_GET['id']);
-        if ($categorie === false)
-        {
+        if ($categorie === false) {
             $this->notFound();
         }
         $billets = $this->Post->lastByCategory($_GET['id']);
@@ -47,6 +45,6 @@ class PostsController extends AppController
     public function show()
     {
         $post = $this->Post->findWithCategory($_GET['id']);
-        $this->render('posts.show', compact('post'));
+        $this->render('posts.show', compact('post', 'comments'));
     }
 }

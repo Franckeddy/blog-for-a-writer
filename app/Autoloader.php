@@ -18,8 +18,7 @@ class Autoloader
      */
     public static function autoload($class)
     {
-        if (strpos($class, __NAMESPACE__ . '\\') === 0)
-        {
+        if (strpos($class, __NAMESPACE__ . '\\') === 0) {
             $class = str_replace(array(__NAMESPACE__ . '\\', '\\'), array('', '/'), $class);
             require __DIR__ . '/' . $class . '.php';
         }
