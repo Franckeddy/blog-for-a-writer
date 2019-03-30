@@ -2,7 +2,7 @@
     <div class="col-sm-10">
         <?php
         if ($billets) {
-            foreach ($billets as $post): ?>
+            foreach ($billets as $post) : ?>
                 <h2>
                     <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
                 </h2>
@@ -22,7 +22,7 @@
         <div class="container"><h3>Catégories</h3></div>
 
         <ul>
-            <?php foreach ($categories as $categorie): ?>
+            <?php foreach ($categories as $categorie) : ?>
                 <li>
                     <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
                 </li>

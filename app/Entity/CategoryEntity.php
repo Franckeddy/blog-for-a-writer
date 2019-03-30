@@ -20,7 +20,6 @@ class CategoryEntity extends Entity
     {
     }
 
-
     public function getTitle()
     {
     }

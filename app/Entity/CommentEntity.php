@@ -18,26 +18,21 @@ class CommentEntity extends Entity
 
     public function getContent()
     {
-
     }
 
     public function getRef_id()
     {
-
     }
 
     public function getCreated()
     {
-
     }
 
     public function getRef()
     {
-
     }
 
     public function geEmail()
     {
-
     }
 }
