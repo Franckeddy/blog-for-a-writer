@@ -82,9 +82,9 @@ class Form
             if ($k === $this->getValue($name)) {
                 $attributes = 'selected';
             }
-            $input .= "<option value='$k'$attributes>$v</option>";
+            $input .= "<option value='$k' $attributes>$v</option>";
         }
-        $input = '</select>';
+        $input .= '</select>';
         return $this->surround($input);
     }
 }

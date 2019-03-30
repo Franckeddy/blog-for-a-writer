@@ -16,8 +16,7 @@ class Table
     public function __construct(Database $db)
     {
         $this->db = $db;
-        if ($this->table === null)
-        {
+        if ($this->table === null) {
             $parts = explode('\\', get_class($this));
             $class_name = end($parts);
             $this->table = strtolower(str_replace('Table', '', $class_name)) . 's';
@@ -50,8 +49,7 @@ class Table
     {
         $sql_parts = [];
         $attributes = [];
-        foreach ($fields as $k => $v)
-        {
+        foreach ($fields as $k => $v) {
             $sql_parts[] = "$k = ?";
             $attributes[] = $v;
         }

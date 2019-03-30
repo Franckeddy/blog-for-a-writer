@@ -45,9 +45,7 @@ class PostsController extends AppController
                 'content' => $_POST['content'],
                 'category_id' => $_POST['category_id'],
             ]);
-            if ($result) {
-                return $this->index();
-            }
+            return $this->index();
         }
         $post = $this->Post->find($_GET['id']);
         $this->loadModel('Category');

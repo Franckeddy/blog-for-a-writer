@@ -1,6 +1,6 @@
 <h1>Administrer les categories</h1>
 <p>
-    <a href="?p=admin.categories.edit" class="btn btn-success">Ajouter</a>
+    <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
 </p>
 <table class="table">
     <thead>
@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($categories as $category): ?>
+    <?php foreach ($categories as $category) : ?>
         <tr>
             <td><?= $category->id; ?></td>
             <td><?= $category->title; ?></td>

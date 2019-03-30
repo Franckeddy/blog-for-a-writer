@@ -8,6 +8,10 @@
         }
     ],
     "require": {
-      "ext-pdo": "*"
+      "ext-pdo": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
     }
 }

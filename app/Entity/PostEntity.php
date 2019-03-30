@@ -38,32 +38,26 @@ class PostEntity extends Entity
 
     public function getId()
     {
-
     }
 
     public function getTitle()
     {
-
     }
 
     public function getCategories()
     {
-
     }
 
     public function getCategories_id()
     {
-
     }
 
     public function getCategory_id()
     {
-
     }
 
     public function getContent()
     {
-
     }
 
     private function dateFr()
@@ -71,6 +65,4 @@ class PostEntity extends Entity
         $d = $this->date;
         return substr($d, 8, 2) . '/' . substr($d, 5, 2) . '/' . substr($d, 0, 4) . substr($d, 10);
     }
-
-
 }

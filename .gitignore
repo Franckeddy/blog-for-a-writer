@@ -1,11 +1,11 @@
 ###> validator ###
-.circleci/
+.circleci
 
 ###> composer ###
-composer.json
+composer.lock
 
 ###> Bootstrap ###
-node_modules/
+node_modules
 
-vendor/
-.idea/
+vendor
+.idea

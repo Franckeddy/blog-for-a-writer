@@ -57,7 +57,7 @@ class BootstrapForm extends Form
             }
             $input .= "<option value='$k'$attributes>$v</option>";
         }
-        $input = '</select>';
+        $input .= '</select>';
         return $this->surround($label . $input);
     }
 }

@@ -1,6 +1,6 @@
 <h1>Administrer les billets</h1>
 <p>
-    <a href="?p=admin.posts.edit" class="btn btn-success">Ajouter</a>
+    <a href="?p=admin.posts.add" class="btn btn-success">Ajouter</a>
 </p>
 <table class="table">
     <thead>

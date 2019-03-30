@@ -18,11 +18,10 @@ class CategoryEntity extends Entity
 
     public function getId()
     {
-
     }
+
 
     public function getTitle()
     {
-
     }
 }
