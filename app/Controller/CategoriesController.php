@@ -16,9 +16,6 @@ class CategoriesController extends AppController
         $this->loadModel('Category');
     }
 
-    /**
-     *
-     */
     public function index()
     {
         $categories = $this->Category->all();

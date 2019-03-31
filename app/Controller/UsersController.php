@@ -13,7 +13,7 @@ use \App;
  */
 class UsersController extends AppController
 {
-    public function login(): void
+    public function login()
     {
         $errors = false;
         if (!empty($_POST)) {

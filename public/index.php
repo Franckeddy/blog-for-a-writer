@@ -11,7 +11,6 @@ ini_set('xdebug.filename_format', '%a');
 ini_set('xdebug.overload_var_dump', 'enable');
 
 define('ROOT', dirname(__DIR__));
-
 require ROOT . '/app/App.php';
 App::load();
 
@@ -24,7 +23,6 @@ if ($page[0] === 'admin') {
     $action = $page[2];
 } else {
     $controller = '\App\Controller\\' . ucfirst($page[0]) . 'Controller';
-    //$controller    = new $controller();
     $action = $page[1];
 }
 $controller = new $controller();

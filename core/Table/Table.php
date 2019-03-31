@@ -113,13 +113,12 @@ class Table
                 str_replace('Table', 'Entity', get_class($this)),
                 $one
             );
-        } else {
-            return $this->db->query(
-                $statement,
-                str_replace('Table', 'Entity', get_class($this)),
-                $one
-            );
         }
+        return $this->db->query(
+            $statement,
+            str_replace('Table', 'Entity', get_class($this)),
+            $one
+        );
     }
 
 //    Commentaires
@@ -138,13 +137,13 @@ class Table
      */
     public function findAll($ref, $ref_id)
     {
-        $q = $this->pdo->prepare('
+        $que = $this->pdo->prepare('
         SELECT * 
         FROM ref_id = :ref_id
         AND ref = :references ORDER BY created DESC 
         ');
-        $q->execute(['ref' => $ref, 'ref_id' => $ref_id]);
-        return $q->fetchAll();
+        $que->execute(['ref' => $ref, 'ref_id' => $ref_id]);
+        return $que->fetchAll();
     }
 
     /**
@@ -169,7 +168,7 @@ class Table
             $this->errors = $errors;
             return false;
         }
-        $q = $this->pdo->prepare('INSERT INTO comments SET 
+        $que = $this->pdo->prepare('INSERT INTO comments SET 
         username    = :username,
         email       = :email,
         content     = :content,
@@ -184,6 +183,6 @@ class Table
             'ref_id' => $ref_id,
             'created' => date('Y-m-d H:i:s')
         ];
-        return $q->execute($date);
+        return $que->execute($date);
     }
 }
