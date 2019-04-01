@@ -17,41 +17,23 @@
     <link href="assets/css/starter-template.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid">
-
+<div class="container">
     <!--navbar-->
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="index.php">Acceuil</a>
-            <span class="text-muted">Bienvenue sur le Blog.</span>
-        </div>
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="#">Billets</a>
-            <span class="text-muted">Liste des Billets.</span>
-        </div>
-        <div class="bg-dark p-4">
-            <a class="text-white h4" href="#">Catégories</a>
-            <span class="text-muted">Liste des Catégories.</span>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand text-white h4" href="index.php">Acceuil</a>
+        <a class="text-muted" href="?p=users.login">Administration du Site.</a>
     </nav>
-
-    <div class="container-fluid" style="padding-top: 1em">
+    <!--body-->
+    <div class="container-fluid" style="padding-top: 6em; padding-bottom: 4em">
         <div class="jumbotron" style="padding-top: 2em">
-            <?= $content; ?>
+            <?= $content ?>
         </div>
     </div>
-
     <!--footer-->
-    <div class="p-3 mb-2 bg-dark text-white">
+    <div class="p-1 bg-dark text-white fixed-bottom">
         <footer class="container" style="padding-top: 1em">
             <div class="panel panel-body">
-                <p>Tous droits réservés par moi...</p>
+                <p>Copyright 2019</p>
             </div>
         </footer>
     </div>

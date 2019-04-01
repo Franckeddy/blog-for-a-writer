@@ -4,13 +4,13 @@
         if ($billets) {
             foreach ($billets as $post) : ?>
                 <h2>
-                    <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
+                    <a href="<?= $post->url ?>"><?= $post->title ?></a>
                 </h2>
                 <p>
-                    <em><?= $post->categorie; ?></em>
+                    <em><?= $post->categorie ?></em>
                 </p>
                 <p>
-                    <?= $post->extrait; ?>
+                    <?= $post->extrait ?>
                 </p>
             <?php endforeach;
         } else {
@@ -24,7 +24,7 @@
         <ul>
             <?php foreach ($categories as $categorie) : ?>
                 <li>
-                    <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
+                    <a href="<?= $categorie->url ?>"><?= $categorie->title ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

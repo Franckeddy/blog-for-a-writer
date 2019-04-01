@@ -21,7 +21,6 @@ class PostTable extends Table
         ORDER BY billets.date DESC');
     }
 
-
     /**
      * Récupére un article en liant la catégorie associée
      * @param $id int

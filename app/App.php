@@ -41,7 +41,8 @@ class App
                 $config->get('db_name'),
                 $config->get('db_user'),
                 $config->get('db_pass'),
-                $config->get('db_host'));
+                $config->get('db_host')
+            );
         }
         return $this->db_instance;
     }

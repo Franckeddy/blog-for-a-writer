@@ -5,13 +5,13 @@
         <?php foreach ($posts as $post) : ?>
             <div class="container">
                 <h2>
-                    <a href="<?= $post->url; ?>"><?= $post->title; ?></a>
+                    <a href="<?= $post->url ?>"><?= $post->title ?></a>
                 </h2>
                 <p>
-                    <em><?= $post->categorie; ?></em>
+                    <em><?= $post->categorie ?></em>
                 </p>
                 <p>
-                    <?= $post->extrait; ?>
+                    <?= $post->extrait ?>
                 </p>
                 <hr size="5" width="50%" align=center/>
             </div>
@@ -22,7 +22,7 @@
         <ul>
             <?php foreach ($categories as $categorie) : ?>
                 <li>
-                    <a href="<?= $categorie->url; ?>"><?= $categorie->title; ?></a>
+                    <a href="<?= $categorie->url ?>"><?= $categorie->title ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -45,6 +45,6 @@ class PostsController extends AppController
     public function show()
     {
         $post = $this->Post->findWithCategory($_GET['id']);
-        $this->render('posts.show', compact('post', 'comments'));
+        $this->render('posts.show', compact('post'));
     }
 }
