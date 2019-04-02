@@ -19,17 +19,6 @@ class CommentTable extends Table
     public $count  = 0;
 
     /**
-     * Permet d'initialiser le module commentaire
-     * @param PDO $pdo instance d'une connection mysql via pdo
-     * @param array $options
-     */
-    public function __construct($pdo, $options = [])
-    {
-        $this->pdo = $pdo;
-        $this->options = array_merge($this->default, $options);
-    }
-
-    /**
      * Permet de récupérer les derniers commentaires d'un sujet
      * @param  string $ref
      * @param  integer $ref_id
@@ -66,7 +55,7 @@ class CommentTable extends Table
         return $comments;
     }
 
-    public function sortReplies ($a, $b)
+    public function sortReplies($a, $b)
     {
         $atime = strtotime($a->created);
         $btime = strtotime($b->created);

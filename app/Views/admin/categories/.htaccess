@@ -1,0 +1,7 @@
+RewriteEngine on
+
+#admin-categories
+RewriteRule ^admincategories$ ?p=admin.categories.index
+RewriteRule ^admincategories/([0-9]+)$ ?p=admin.categories.edit&id=$1
+
+RewriteRule ^adminaddcategories$ index.php?p=admin.categories.add

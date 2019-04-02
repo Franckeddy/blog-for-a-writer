@@ -20,7 +20,7 @@
 <div class="container">
     <!--navbar-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand text-white h4" href="index.php">Acceuil</a>
+        <a class="navbar-brand text-white h4" href="index.php" style="align-content: center">Acceuil</a>
         <a class="text-muted" href="?p=users.login">Administration du Site.</a>
     </nav>
     <!--body-->
@@ -32,7 +32,7 @@
     <!--footer-->
     <div class="p-1 bg-dark text-white fixed-bottom">
         <footer class="container" style="padding-top: 1em">
-            <div class="panel panel-body">
+            <div class="panel panel-body" style="align-content: center">
                 <p>Copyright 2019</p>
             </div>
         </footer>

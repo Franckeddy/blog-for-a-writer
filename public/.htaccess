@@ -1,0 +1,17 @@
+RewriteEngine on
+
+#index
+RewriteRule ^index$ index.php
+RewriteRule ^posts/([0-9]+)$ index.php?p=posts.show&id=$1
+RewriteRule ^categories/([0-9]+)$ index.php?p=posts.categories&id=$1
+
+#login
+RewriteRule ^login$ index.php?p=users.login
+
+#admin-posts
+RewriteRule ^adminposts$ index.php?p=admin.posts.index
+RewriteRule ^adminposts/([0-9]+)$ index.php?p=admin.posts.edit&id=$1
+
+#admin-categories
+RewriteRule ^admincategories$ index.php?p=admin.categories.index
+RewriteRule ^admincategories/([0-9]+)$ index.php?p=admin.categories.edit&id=$1

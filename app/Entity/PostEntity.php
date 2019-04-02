@@ -48,11 +48,11 @@ class PostEntity extends Entity
     {
     }
 
-    public function getCategories_id()
+    public function getCategoriesId()
     {
     }
 
-    public function getCategory_id()
+    public function getCategoryId()
     {
     }
 

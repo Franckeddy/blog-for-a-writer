@@ -1,0 +1,5 @@
+RewriteEngine on
+
+#admin-categories
+RewriteRule ^adminposts$ ?p=admin.posts.index
+RewriteRule ^adminposts/([0-9]+)$ ?p=admin.posts.edit&id=$1

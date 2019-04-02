@@ -26,7 +26,7 @@ class CommentEntity extends Entity
     {
     }
 
-    public function getRef_id()
+    public function getRefId()
     {
     }
 
