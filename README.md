@@ -11,21 +11,6 @@ Password protected administration interface. Writing of banknotes in a WYSIWYG i
 
 Develop in PHP without using a framework. Code built on an MVC architecture.
 
-## Table of Contents
-
-*  [Certifications](#certifications)
-*  [The Learning Platform](#the-learning-platform)
-*  [Found a Bug](#found-a-bug)
-*  [Found a Security Issue](#found-a-security-issue)
-*  [Contributing](#contributing)
-*  [License](#license)
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Installing
-
 ### And coding style tests
 
 **[Codacy](https://app.codacy.com/)** is an automated code analysis/quality tool that helps developers ship better software, faster. With Codacy, you get static analysis, cyclomatic complexity, duplication and code unit test coverage changes in every commit and pull request.
@@ -44,10 +29,6 @@ _Track your quality evolution_
 ```
 CircleCI build dashboard shows all recent builds in one place. Filter by "My builds" or "All builds" to find what you're looking for faster.
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
