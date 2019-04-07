@@ -14,7 +14,7 @@
             <td><?= $comment->id; ?></td>
             <td><?= $comment->title ?></td>
             <td>
-                <a class="btn btn-primary" href="admincomment/<?= $comment->id ?>">Editer</a>
+                <a class="btn btn-primary" href="?p=admin.comments.edit&id=<?= $comment->id ?>">Editer</a>
                 <form action="?p=admin.comments.delete" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $comment->id ?>">
                     <button type="submit" class="btn btn-danger">Supprimer</button>

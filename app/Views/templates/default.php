@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Blog pour un écrivain">
     <meta name="author" content="Franck Garçon">
-    <title><?= App::getInstance()->title; ?></title>
+    <title><?= App::getInstance()->title ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 <div class="container">
     <!--navbar-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand text-white h4" href="index.php" style="align-content: center">Acceuil</a>
+        <a class="navbar-brand text-white h4" href="index" style="align-content: center">Acceuil</a>
         <a class="text-muted" href="?p=users.login">Administration du Site.</a>
     </nav>
     <!--body-->

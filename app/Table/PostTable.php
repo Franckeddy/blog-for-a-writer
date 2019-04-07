@@ -2,6 +2,7 @@
 
 namespace App\Table;
 
+use App\Entity\PostEntity;
 use Core\Table\Table;
 
 class PostTable extends Table
@@ -24,9 +25,9 @@ class PostTable extends Table
     /**
      * Récupére un article en liant la catégorie associée
      * @param $id int
-     * @return \App\Entity\PostEntity
+     * @return PostEntity
      */
-    public function findWithCategory($id): \App\Entity\PostEntity
+    public function findWithCategory($id): PostEntity
     {
         return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie

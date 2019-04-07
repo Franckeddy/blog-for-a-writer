@@ -24,6 +24,7 @@ class PostsController extends AppController
         if (!empty($_POST)) {
             $result = $this->Post->create([
                 'title' => $_POST['title'],
+                'date' => $_GET['date'],
                 'content' => $_POST['content'],
                 'category_id' => $_POST['category_id'],
             ]);

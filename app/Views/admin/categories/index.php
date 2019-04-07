@@ -19,7 +19,7 @@
                 <a class="btn btn-primary" href="admincategories/<?= $category->id ?>">Editer</a>
                 <form action="?p=admin.categories.delete" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $category->id ?>">
-                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                    <button type="submit" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">Supprimer</button>
                 </form>
             </td>
         </tr>
