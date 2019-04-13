@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Core\Controller\Controller;
 use \App;
+use Core\HTML\BootstrapForm;
 
 class PostsController extends AppController
 {
@@ -28,7 +29,7 @@ class PostsController extends AppController
     /**
      *
      */
-    public function categories()
+    public function categories(): void
     {
         $categorie = $this->Category->find($_GET['id']);
         if ($categorie === false) {
@@ -39,13 +40,23 @@ class PostsController extends AppController
         $this->render('posts.category', compact('billets', 'categories', 'categorie'));
     }
 
-    /**
-     *
-     */
     public function show()
     {
         $post = $this->Post->findWithCategory($_GET['id']);
-        $comments = $this->Comment->findAll('post', 'id');
-        $this->render('posts.show', compact('post', 'comments'));
+        $comments = $this->Comment->showComments($_GET['id']);
+        $form = new BootstrapForm($_POST);
+        if (!empty($_POST)) {
+            $result = $this->Comment->create([
+                'username' => $_POST['username'],
+                'email' => $_POST['email'],
+                'content' => $_POST['content'],
+                'ref_id' => $_GET['id'],
+                'created' => $_GET['created'],
+            ]);
+            if ($result) {
+                return $this->index();
+            }
+        }
+        $this->render('posts.show', compact('post', 'comments', 'form'));
     }
 }

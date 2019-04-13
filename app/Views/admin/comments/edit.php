@@ -6,20 +6,16 @@
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
             "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
         ],
-
         toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
         toolbar2: "cut copy paste | bullist numlist | outdent indent blockquote | undo redo | anchor | forecolor backcolor",
-
-
         menubar: false,
         toolbar_items_size: 'small',
-
-        height: 500,
+        height: 200,
     });
 </script>
 <form method="post">
-    <?= $form->input('title', 'Titre de l\'article') ?>
+    <?= $form->input('username', 'Autheur') ?>
     <?= $form->input('content', 'Contenu', ['type' => 'textarea']) ?>
-    <?= $form->select('category_id', 'Catégorie', $categories) ?>
+    <?= $form->select('ref_id', 'Billets', $comment) ?>
     <button class="btn btn-primary">Sauvegarder</button>
 </form>

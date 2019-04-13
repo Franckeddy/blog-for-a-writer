@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use Core\Auth\DBAuth;
 use Core\Controller\Controller;
 use \App;
-use app\Table\CommentTable;
+use Core\HTML\BootstrapForm;
 
 class CommentsController extends AppController
 {
+    private $pdo;
+
     /**
      * CommentsController constructor.
      */
@@ -15,19 +18,61 @@ class CommentsController extends AppController
     {
         parent::__construct();
         $this->loadModel('Comment');
-        $this->loadModel('Post');
     }
 
-    public function addComment($postId, $author, $comment)
+    public function index()
     {
-        $commentManager = new CommentTable($db);
+        $comments = $this->Comment->all();
+        $this->render('comments.index', compact('comments'));
+    }
 
-        $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-        if ($affectedLines === false) {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
+    public function addComment()
+    {
+        $errors = false;
+        if (!empty($_POST)) {
+            $auth = new DBAuth(App::getInstance()->getDb());
+            if ($auth->login($_POST['username'], $_POST['password'])) {
+                header('location: index.php?p=admin.posts.index');
+            } else {
+                $errors = true;
+            }
         }
+        $form = new BootstrapForm($_POST);
+        $this->render('users.login', compact('form', 'errors'));
+    }
 
-        header('Location: index.php?action=post&id=' . $postId);
+    public function save()
+    {
+        $errors = [];
+        if (empty($_POST['username'])) {
+            $errors['username'] = $this->options['username_error'];
+        }
+        if (empty($_POST['email']) ||
+            !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = $this->options['email_error'];
+        }
+        if (empty($_POST['content'])) {
+            $errors['content'] = $this->options['content_error'];
+        }
+        if (count($errors) > 0) {
+            $this->errors = $errors;
+            return false;
+        }
+        $q = $this->pdo->prepare('
+            INSERT INTO comments SET
+            username = :username,
+            email    = :email,
+            content  = :content,
+            ref_id   = :ref_id,
+            ref      = :ref,
+            created  = :created');
+        $data = [
+            'username' => $_POST['username'],
+            'email' => $_POST['email'],
+            'content' => $_POST['content'],
+            'ref_id' => $ref_id,
+            'created' => date('Y-m-d H:i:s')
+        ];
+        return $q->execute($data);
     }
 }

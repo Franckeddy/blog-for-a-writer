@@ -6,12 +6,12 @@ use Core\Entity\Entity;
 
 class CommentEntity extends Entity
 {
-
     public $id;
+
     /**
      * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return 'index.php?p=posts.comments&id=' . $this->id;
     }
@@ -28,15 +28,11 @@ class CommentEntity extends Entity
     {
     }
 
-    public function getRefId()
+    public function getRef_id()
     {
     }
 
     public function getCreated()
-    {
-    }
-
-    public function getRef()
     {
     }
 

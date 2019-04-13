@@ -37,7 +37,7 @@ class Table
      */
     public function find($id)
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [ $id ], true);
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
     /**

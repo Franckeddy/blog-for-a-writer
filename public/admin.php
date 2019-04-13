@@ -1,6 +1,7 @@
 <?php
 
 use App\Controller\Admin\CategoriesController;
+use App\Controller\Admin\CommentsController;
 use App\Controller\PostsController;
 use App\Controller\UsersController;
 use Core\Auth\DBAuth;
@@ -11,6 +12,20 @@ require ROOT . '/app/App.php';
 App::load();
 
 $page = $_GET['p'] ?? 'home';
+
+$errors = false;
+$success = false;
+$comments_cls = new \App\Controller\CommentsController();
+$post = new PostsController();
+
+if (isset($_POST['action']) && $_POST['action'] === 'comment') {
+    $save = $comments_cls->save('billets', $post->id);
+    if ($save) {
+        $success = true;
+    } else {
+        $errors = $comments_cls->errors;
+    }
+}
 
 //-----------------------------------------------------------Auth
 $app = App::getInstance();
@@ -54,6 +69,19 @@ if ($page === 'home') {
     $controller->add();
 } elseif ($page === 'categories.delete') {
     $controller = new CategoriesController();
+    $controller->delete();
+//-----------------------------------------------------------Commentaires
+} elseif ($page === 'categories.index') {
+    $controller = new CommentsController();
+    $controller->index();
+} elseif ($page === 'categories.edit') {
+    $controller = new CommentsController();
+    $controller->edit();
+} elseif ($page === 'categories.add') {
+    $controller = new CommentsController();
+    $controller->add();
+} elseif ($page === 'categories.delete') {
+    $controller = new CommentsController();
     $controller->delete();
 }
 

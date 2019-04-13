@@ -50,14 +50,16 @@ class BootstrapForm extends Form
     {
         $label = '<label>' . $label . '</label>';
         $input = '<select class="form-control" name="' . $name . '">';
-        foreach ($options as $k => $v) {
-            $attributes = '';
-            if ($k === $this->getValue($name)) {
-                $attributes = 'selected';
+        if (isset($name, $label, $options)) {
+            foreach ($options as $k => $v) {
+                $attributes = '';
+                if ($k === $this->getValue($name)) {
+                    $attributes = 'selected';
+                }
+                $input .= "<option value='$k'$attributes>$v</option>";
             }
-            $input .= "<option value='$k'$attributes>$v</option>";
+            $input .= '</select>';
+            return $this->surround($label . $input);
         }
-        $input .= '</select>';
-        return $this->surround($label . $input);
     }
 }

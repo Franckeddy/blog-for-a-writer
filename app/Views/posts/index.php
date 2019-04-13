@@ -10,7 +10,6 @@
                 <p>
                     <em><?= $post->categorie ?></em>
                 </p>
-                <p><?= $post->date ?></p>
                 <p>
                     <?= $post->extrait ?>
                 </p>
