@@ -15,28 +15,4 @@ class CommentEntity extends Entity
     {
         return 'index.php?p=posts.comments&id=' . $this->id;
     }
-
-    public function getId()
-    {
-    }
-
-    public function getUsername()
-    {
-    }
-
-    public function getContent()
-    {
-    }
-
-    public function getRef_id()
-    {
-    }
-
-    public function getCreated()
-    {
-    }
-
-    public function geEmail()
-    {
-    }
 }

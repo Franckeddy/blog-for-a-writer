@@ -7,5 +7,8 @@
 <form method="post">
     <?= $form->input('username', 'Pseudo') ?>
     <?= $form->input('password', 'Mot de passe', ['type' => 'password']) ?>
-    <button class="btn btn-primary">Envoyer</button>
+    <div style="display: inline">
+        <button class="btn btn-primary">Envoyer</button>
+        <a href="index" class="btn btn-outline-secondary">Retour à l'acceuil.</a>
+    </div>
 </form>

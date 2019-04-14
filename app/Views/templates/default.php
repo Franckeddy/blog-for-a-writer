@@ -21,7 +21,7 @@
     <!--navbar-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <a class="navbar-brand text-white h4" href="index" style="align-content: center">Acceuil</a>
-        <a class="text-muted" href="?p=users.login">Administration du Site.</a>
+        <a class="text-muted" href="?p=admin.posts.index">Administration du Site.</a>
     </nav>
     <!--body-->
     <div class="container-fluid" style="padding-top: 6em; padding-bottom: 4em">
@@ -32,8 +32,9 @@
     <!--footer-->
     <div class="p-1 bg-dark text-white fixed-bottom">
         <footer class="container" style="padding-top: 1em">
-            <div class="panel panel-body" style="align-content: center">
-                <p>Copyright 2019</p>
+            <div class="panel panel-body" style="align-content: center;padding-bottom: 1em;">
+                <a>Copyright 2019</a>
+                <a class="text-muted" href="login">Login.</a>
             </div>
         </footer>
     </div>

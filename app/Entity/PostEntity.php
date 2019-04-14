@@ -28,28 +28,4 @@ class PostEntity extends Entity
         $html .= '<p><a class="btn btn-outline-secondary" href="' . $this->getUrl() . '">Voir la suite</a></p>';
         return $html;
     }
-
-    public function getId()
-    {
-    }
-
-    public function getTitle()
-    {
-    }
-
-    public function getCategories()
-    {
-    }
-
-    public function getCategoriesId()
-    {
-    }
-
-    public function getCategoryId()
-    {
-    }
-
-    public function getContent()
-    {
-    }
 }

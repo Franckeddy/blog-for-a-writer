@@ -15,12 +15,4 @@ class CategoryEntity extends Entity
     {
         return 'index.php?p=posts.categories&id=' . $this->id;
     }
-
-    public function getId()
-    {
-    }
-
-    public function getTitle()
-    {
-    }
 }

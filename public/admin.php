@@ -13,20 +13,6 @@ App::load();
 
 $page = $_GET['p'] ?? 'home';
 
-$errors = false;
-$success = false;
-$comments_cls = new \App\Controller\CommentsController();
-$post = new PostsController();
-
-if (isset($_POST['action']) && $_POST['action'] === 'comment') {
-    $save = $comments_cls->save('billets', $post->id);
-    if ($save) {
-        $success = true;
-    } else {
-        $errors = $comments_cls->errors;
-    }
-}
-
 //-----------------------------------------------------------Auth
 $app = App::getInstance();
 $auth = new DBAuth($app->getDb());

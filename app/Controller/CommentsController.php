@@ -40,39 +40,4 @@ class CommentsController extends AppController
         $form = new BootstrapForm($_POST);
         $this->render('users.login', compact('form', 'errors'));
     }
-
-    public function save()
-    {
-        $errors = [];
-        if (empty($_POST['username'])) {
-            $errors['username'] = $this->options['username_error'];
-        }
-        if (empty($_POST['email']) ||
-            !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = $this->options['email_error'];
-        }
-        if (empty($_POST['content'])) {
-            $errors['content'] = $this->options['content_error'];
-        }
-        if (count($errors) > 0) {
-            $this->errors = $errors;
-            return false;
-        }
-        $q = $this->pdo->prepare('
-            INSERT INTO comments SET
-            username = :username,
-            email    = :email,
-            content  = :content,
-            ref_id   = :ref_id,
-            ref      = :ref,
-            created  = :created');
-        $data = [
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'content' => $_POST['content'],
-            'ref_id' => $ref_id,
-            'created' => date('Y-m-d H:i:s')
-        ];
-        return $q->execute($data);
-    }
 }

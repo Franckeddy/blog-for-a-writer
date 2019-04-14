@@ -12,7 +12,7 @@ RewriteRule ^login$ index.php?p=users.login [L]
 RewriteRule ^deleteposts$ index.php?p=admin.posts.delete [L]
 RewriteRule ^addposts$ index.php?p=admin.posts.add [L]
 RewriteRule ^adminposts$ index.php?p=admin.posts.index [L]
-RewriteRule ^adminposts/([0-9]+)$ index.php?p=admin.posts.edit&id=$1 [L]
+RewriteRule ^adminposts/([0-9]+)$ adminposts?p=admin.posts.edit&id=$1 [L]
 
 #admin-categories
 RewriteRule ^deletecategories$ index.php?p=admin.categories.delete [L]

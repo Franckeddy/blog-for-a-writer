@@ -51,7 +51,7 @@ class PostsController extends AppController
                 'email' => $_POST['email'],
                 'content' => $_POST['content'],
                 'ref_id' => $_GET['id'],
-                'created' => $_GET['created'],
+                'created' => date('Y-m-d H:i:s'),
             ]);
             if ($result) {
                 return $this->index();

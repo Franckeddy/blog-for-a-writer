@@ -3,6 +3,7 @@
     <p><em><?= $post->categorie ?></em></p>
     <hr size="5" width="50%" align=center/>
     <p><?= $post->content ?></p>
+    <a href="index" class="btn btn-outline-secondary">Retour à l'acceuil.</a>
 </div>
 <hr size="5" width="50%" align=center/>
 <h3>Commentaires</h3>
@@ -22,7 +23,6 @@
         </div>
     </div>
 <?php endforeach ?>
-
 <hr size="5" width="50%" align=center/>
 <h2>Poster un commentaire</h2>
 <div class="container">
