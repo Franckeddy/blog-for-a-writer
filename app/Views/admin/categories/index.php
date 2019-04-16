@@ -16,8 +16,8 @@
             <td><?= $category->id ?></td>
             <td><?= $category->title ?></td>
             <td>
-                <a class="btn btn-primary" href="admincategories/<?= $category->id ?>">Editer</a>
-                <form action="deletecategories" method="post" style="display: inline">
+                <a class="btn btn-primary" href="?p=admin.comments.edit&id=<?= $category->id ?>">Editer</a>
+                <form action="?p=admin.categories.delete" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $category->id ?>">
                     <button type="submit"
                             class="btn btn-danger"
@@ -32,5 +32,5 @@
 <HR align=center size=8 width="50%">
 <h2>Administrer les Billets</h2>
 <p>
-    <a href="adminposts" class="btn btn-outline-warning">Go</a>
+    <a href="?p=admin.posts.index" class="btn btn-outline-warning">Go</a>
 </p>

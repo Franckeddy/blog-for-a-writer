@@ -25,7 +25,7 @@
     </nav>
     <!--body-->
     <div class="container-fluid" style="padding-top: 6em; padding-bottom: 4em">
-        <div class="jumbotron" style="padding-top: 2em">
+        <div class="jumbotron" style="padding-top: 2em;padding-bottom 2em;overflow-y: scroll;height: 38em;position: relative;">
             <?= $content ?>
         </div>
     </div>

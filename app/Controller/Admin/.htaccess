@@ -15,6 +15,9 @@ RewriteRule ^adminposts$ index.php?p=admin.posts.index [L]
 RewriteRule ^adminposts/([0-9]+)$ index.php?p=admin.posts.edit&id=$1 [L]
 
 #admin-categories
+RewriteRule ^deletecategories$ index.php?p=admin.categories.delete [L]
 RewriteRule ^addcategories$ index.php?p=admin.categories.add [L]
 RewriteRule ^admincategories$ index.php?p=admin.categories.index [L]
 RewriteRule ^admincategories/([0-9]+)$ index.php?p=admin.categories.edit&id=$1 [L]
+
+RewriteRule ^addcategories$ addcategories [L]

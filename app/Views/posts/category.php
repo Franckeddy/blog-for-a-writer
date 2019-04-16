@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-10">
+    <div class="col-sm-8">
         <?php
         if ($billets) {
             foreach ($billets as $post) : ?>
@@ -14,13 +14,15 @@
                 </p>
             <?php endforeach;
         } else {
-            echo '<h4>Aucun article dans cette rubrique</h4>';
+            echo '<h4>Aucun article dans cette rubrique</h4>
+                  <a href="index" class="btn btn-outline-secondary">Retour à l\'acceuil.</a>';
         }
         ?>
     </div>
-    <div class="col-sm-2">
-        <div class="container"><h3>Catégories</h3></div>
-
+    <div class="col-sm-4">
+        <div class="container">
+            <h2>Catégories</h2>
+        </div>
         <ul>
             <?php foreach ($categories as $categorie) : ?>
                 <li>

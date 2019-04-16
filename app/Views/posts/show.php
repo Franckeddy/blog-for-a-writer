@@ -1,5 +1,5 @@
-<div class="jumbotron">
-    <h2><?= $post->title ?></h2>
+<div class="jumbotron" style="overflow: scroll;">
+    <h2 style="padding-bottom: 2em"><?= $post->title ?></h2>
     <p><em><?= $post->categorie ?></em></p>
     <hr size="5" width="50%" align=center/>
     <p><?= $post->content ?></p>
@@ -8,11 +8,11 @@
 <hr size="5" width="50%" align=center/>
 <h3>Commentaires</h3>
 <?php foreach ($comments as $comment) : ?>
-    <div class="comment row" style="width: auto;margin:10px 5em;border:1px dotted gray;background-color: #dff0d8">
-        <div class="col-xs-2">
-            <img src="http://www.gravatar.com/avatar/<?= md5($comment['email']) ?>" width="100%">
+    <div class="row" style="width: auto;margin:10px 2em;border:1px dotted gray;background-color: #dff0d8">
+        <div class="col-md-2">
+            <img src="http://www.gravatar.com/avatar/<?= md5($comment['email']) ?>" width="100%" alt="Logo">
         </div>
-        <div class="col-xs-10">
+        <div class="col-md-10">
             <p>
                 Commentaire posté par: <strong><?= $comment['username'] ?>, </strong>
                 le <em><?= date('d/m/Y', strtotime($comment['created'])) ?></em>
@@ -24,7 +24,7 @@
     </div>
 <?php endforeach ?>
 <hr size="5" width="50%" align=center/>
-<h2>Poster un commentaire</h2>
+<h3>Poster un commentaire</h3>
 <div class="container">
     <form action="#comment" role="form" method="post" id="comment">
         <div class="row" style="width: auto">

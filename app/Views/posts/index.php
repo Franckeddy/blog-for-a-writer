@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-10">
+    <div class="col-sm-8">
         <div class="container"><h1>Billets</h1></div>
         <hr size="5" width=”100%”/>
         <?php foreach ($posts as $post) : ?>
@@ -17,8 +17,8 @@
             </div>
         <?php endforeach; ?>
     </div>
-    <div class="col-sm-2">
-        <div class="container"><h3>Catégories</h3></div>
+    <div class="col-sm-4">
+        <div class="container"><h2>Catégories</h2></div>
         <ul>
             <?php foreach ($categories as $categorie) : ?>
                 <li>
