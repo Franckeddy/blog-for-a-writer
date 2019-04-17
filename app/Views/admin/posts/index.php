@@ -29,7 +29,20 @@
     </tbody>
 </table>
 <HR align=center size=8 width="50%">
-<h2>Administrer les Catégories</h2>
-<p>
-    <a href="?p=admin.categories.index" class="btn btn-outline-warning">Go</a>
-</p>
+<div class="row" style="padding-top: 1em">
+    <div class="col-6">
+        <h3>Administrer les Catégories</h3>
+        <p>
+            <a href="?p=admin.categories.index" class="btn btn-outline-warning">Go</a>
+        </p>
+    </div>
+    <div class="col-6">
+        <h3>Administrer les Commentaires</h3>
+        <p>
+            <a href="?p=admin.comments.index" class="btn btn-outline-warning">Go</a>
+        </p>
+    </div>
+</div>
+<HR align=center size=8 width="50%">
+<a href="index" class="btn btn-outline-secondary">Retour à l'acceuil.</a>
+
