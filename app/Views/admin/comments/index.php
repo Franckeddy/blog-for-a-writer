@@ -3,12 +3,11 @@
     <table class="table">
         <thead>
         <tr>
-            <td>Id</td>
-            <td style="width: 70%">Contenu</td>
-            <td>Action</td>
+            <td><strong>ID</strong></td>
+            <td><strong style="width: 70%"><strong>Contenu</strong></td>
+            <td><strong>Action</strong></td>
         </tr>
         </thead>
-
         <tbody>
         <?php foreach ($comments as $comment) : ?>
             <tr>

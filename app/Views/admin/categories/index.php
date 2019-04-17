@@ -5,9 +5,9 @@
 <table class="table">
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Titre</td>
-        <td>Action</td>
+        <td><strong>ID</strong></td>
+        <td><strong>Titre</strong></td>
+        <td><strong>Action</strong></td>
     </tr>
     </thead>
     <tbody>
