@@ -14,7 +14,7 @@ class CommentTable extends Table
         SELECT comments.id, comments.username, comments.content, comments.created, comments.email as comment
         FROM comments 
         WHERE comments.ref_id = ? 
-        ORDER BY comments.created DESC LIMIT 0, 3', [$comments_id]);
+        ORDER BY comments.created DESC', [$comments_id]);
     }
 
     public function findAll($ref_id)

@@ -34,7 +34,7 @@ class AppController extends Controller
      */
     protected function setTitle($title)
     {
-        $app = \App::getInstance();
+        $app = App::getInstance();
         $app->title = $title . ' | ' . $app->title;
     }
 }

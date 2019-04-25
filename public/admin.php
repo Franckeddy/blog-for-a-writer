@@ -2,6 +2,7 @@
 
 use App\Controller\Admin\CategoriesController;
 use App\Controller\Admin\CommentsController;
+use App\Controller\Admin\PostsController as AdminPostController;
 use App\Controller\PostsController;
 use App\Controller\UsersController;
 use Core\Auth\DBAuth;
@@ -35,13 +36,13 @@ if ($page === 'home') {
     $controller = new PostsController();
     $controller->show();
 } elseif ($page === 'posts.edit') {
-    $controller = new \App\Controller\Admin\PostsController();
+    $controller = new AdminPostController();
     $controller->edit();
 } elseif ($page === 'posts.add') {
-    $controller = new \App\Controller\Admin\PostsController();
+    $controller = new AdminPostController();
     $controller->add();
 } elseif ($page === 'posts.delete') {
-    $controller = new \App\Controller\Admin\PostsController();
+    $controller = new AdminPostController();
     $controller->delete();
     //-----------------------------------------------------------Categories
 } elseif ($page === 'categories.index') {
@@ -57,16 +58,10 @@ if ($page === 'home') {
     $controller = new CategoriesController();
     $controller->delete();
 //-----------------------------------------------------------Commentaires
-} elseif ($page === 'categories.index') {
+} elseif ($page === 'comments.index') {
     $controller = new CommentsController();
     $controller->index();
-} elseif ($page === 'categories.edit') {
-    $controller = new CommentsController();
-    $controller->edit();
-} elseif ($page === 'categories.add') {
-    $controller = new CommentsController();
-    $controller->add();
-} elseif ($page === 'categories.delete') {
+} elseif ($page === 'comments.delete') {
     $controller = new CommentsController();
     $controller->delete();
 }

@@ -9,8 +9,6 @@ use Core\HTML\BootstrapForm;
 
 class CommentsController extends AppController
 {
-    private $pdo;
-
     /**
      * CommentsController constructor.
      */
@@ -32,7 +30,7 @@ class CommentsController extends AppController
         if (!empty($_POST)) {
             $auth = new DBAuth(App::getInstance()->getDb());
             if ($auth->login($_POST['username'], $_POST['password'])) {
-                header('location: index.php?p=admin.posts.index');
+                header('location: adminposts');
             } else {
                 $errors = true;
             }

@@ -30,5 +30,6 @@
                 </li>
             <?php endforeach; ?>
         </ul>
+        <a href="../index" class="btn btn-outline-secondary" style="margin-left: 2em">Retour à l'acceuil.</a>
     </div>
 </div>

@@ -20,12 +20,18 @@
 <div class="container">
     <!--navbar-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand text-white h4" href="index" style="align-content: center">Acceuil</a>
-        <a class="text-muted" href="?p=admin.posts.index">Administration du Site.</a>
+        <a class="navbar-brand text-white h4" href="../index" style="align-content: center">Accueil</a>
+        <?php if (!isset($_SESSION['username, password'])) {
+            echo '<a class="text-muted" href="adminposts">Administration du Site.</a>';
+        } else {
+            echo "<a>Vous devez vous identifier</a>";
+        }
+        ?>
     </nav>
     <!--body-->
     <div class="container-fluid" style="padding-top: 6em; padding-bottom: 4em">
-        <div class="jumbotron" style="padding-top: 2em;padding-bottom 2em;overflow-y: scroll;height: 38em;position: relative;">
+        <div class="jumbotron"
+             style="padding-top: 2em;padding-bottom 2em;overflow-y: scroll;height: 38em;position: relative;">
             <?= $content ?>
         </div>
     </div>

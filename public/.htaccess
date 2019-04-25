@@ -2,19 +2,27 @@ RewriteEngine on
 
 #index
 RewriteRule ^index$ index.php [L]
-RewriteRule ^posts/([0-9]+)$ index.php?p=posts.show&id=$1 [L]
-RewriteRule ^categories/([0-9]+)$ index.php?p=posts.categories&id=$1 [L]
-
+#posts
+RewriteRule ^posts/([a-zA-Z0-9]+)$ index.php?p=posts.show&id=$1 [L]
+#categories
+RewriteRule ^categories/([a-zA-Z0-9]+)$ index.php?p=posts.categories&id=$1 [L]
+#comments
+RewriteRule ^comments/([a-zA-Z0-9]+)$ index.php?p=posts.comments&id=$1 [L]
 #login
 RewriteRule ^login$ index.php?p=users.login [L]
 
+###################################################		Admin		################################################
 #admin-posts
 RewriteRule ^deleteposts$ index.php?p=admin.posts.delete [L]
 RewriteRule ^addposts$ index.php?p=admin.posts.add [L]
 RewriteRule ^adminposts$ index.php?p=admin.posts.index [L]
-RewriteRule ^adminposts/([0-9]+)$ index.php?p=admin.posts.edit&id=$1 [L]
-
+RewriteRule ^adminposts/([a-zA-Z0-9]+)$ index.php?p=admin.posts.edit&id=$1 [L]
 #admin-categories
+RewriteRule ^deletecategories$ index.php?p=admin.categories.delete [L]
 RewriteRule ^addcategories$ index.php?p=admin.categories.add [L]
 RewriteRule ^admincategories$ index.php?p=admin.categories.index [L]
-RewriteRule ^admincategories/([0-9]+)$ index.php?p=admin.categories.edit&id=$1 [L]
+RewriteRule ^admincategories/([a-zA-Z0-9]+)$ index.php?p=admin.categories.edit&id=$1 [L]
+#admin-comments
+RewriteRule ^deletecomments$ index.php?p=admin.comments.delete [L]
+RewriteRule ^admincomments$ index.php?p=admin.comments.index [L]
+RewriteRule ^admincomments/([a-zA-Z0-9]+)$ index.php?p=admin.comments.edit&id=$1 [L]

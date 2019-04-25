@@ -1,6 +1,6 @@
 <h2>Administrer les categories</h2>
 <p>
-    <a href="?p=admin.categories.add" class="btn btn-success">Ajouter</a>
+    <a href="addcategories" class="btn btn-success">Ajouter</a>
 </p>
 <table class="table">
     <thead>
@@ -16,8 +16,8 @@
             <td><?= $category->id ?></td>
             <td><?= $category->title ?></td>
             <td>
-                <a class="btn btn-primary" href="?p=admin.comments.edit&id=<?= $category->id ?>">Editer</a>
-                <form action="?p=admin.categories.delete" method="post" style="display: inline">
+                <a class="btn btn-primary" href="admincategories/<?= $category->id ?>">Editer</a>
+                <form action="deletecategories" method="post" style="display: inline">
                     <input type="hidden" name="id" value="<?= $category->id ?>">
                     <button type="submit"
                             class="btn btn-danger"
@@ -34,13 +34,13 @@
     <div class="col-6">
         <h3>Administrer les Billets</h3>
         <p>
-            <a href="?p=admin.posts.index" class="btn btn-outline-warning">Go</a>
+            <a href="adminposts" class="btn btn-outline-warning">Go</a>
         </p>
     </div>
     <div class="col-6">
         <h3>Administrer les Commentaires</h3>
         <p>
-            <a href="?p=admin.comments.index" class="btn btn-outline-warning">Go</a>
+            <a href="admincomments" class="btn btn-outline-warning">Go</a>
         </p>
     </div>
 </div>

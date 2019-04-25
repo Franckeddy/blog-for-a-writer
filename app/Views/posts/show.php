@@ -1,16 +1,15 @@
 <div class="jumbotron" style="overflow: scroll;">
     <h2 style="padding-bottom: 2em"><?= $post->title ?></h2>
-    <p><em><?= $post->categorie ?></em></p>
+    Cat. <strong><?= $post->categorie ?></strong>
     <hr size="5" width="50%" align=center/>
     <p><?= $post->content ?></p>
-    <a href="index" class="btn btn-outline-secondary">Retour à l'acceuil.</a>
 </div>
 <hr size="5" width="50%" align=center/>
 <h3>Commentaires</h3>
 <?php foreach ($comments as $comment) : ?>
-    <div class="row" style="width: auto;margin:10px 2em;border:1px dotted gray;background-color: #dff0d8">
+    <div id="text" class="row" style="width: auto;margin:10px 2em;border:1px dotted gray;background-color: #dff0d8">
         <div class="col-md-2">
-            <img src="http://www.gravatar.com/avatar/<?= md5($comment['email']) ?>" width="100%" alt="Logo">
+            <img src="http://www.gravatar.com/avatar/<?= md5($comment['username']) ?>" width="100%" alt="Logo">
         </div>
         <div class="col-md-10">
             <p>
@@ -49,3 +48,14 @@
         </div>
     </form>
 </div>
+<HR align=center size=8 width="50%">
+<div class="row">
+    <div class="col-12">
+        <a href="../index" class="btn btn-outline-secondary" style="float: right">Retour à l'acceuil.</a>
+    </div>
+</div>
+<style>
+a{
+    disabled="disable"
+}
+</style>
