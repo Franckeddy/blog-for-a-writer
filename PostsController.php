@@ -43,9 +43,6 @@ class PostsController extends AppController
     public function show()
     {
         $post = $this->Post->findWithCategory($_GET['id']);
-        if ($post === false) {
-            $this->notFound();
-        }
         $comments = $this->Comment->showComments($_GET['id']);
         $form = new BootstrapForm($_POST);
         if (!empty($_POST)) {
@@ -57,7 +54,7 @@ class PostsController extends AppController
                 'created' => date('Y-m-d H:i:s'),
             ]);
             if ($result) {
-                return header('location: index.php?p=posts.show&id=');
+                return $this->index();
             }
         }
         $this->render('posts.show', compact('post', 'comments', 'form'));

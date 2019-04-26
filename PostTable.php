@@ -27,7 +27,7 @@ class PostTable extends Table
      * @param $id int
      * @return PostEntityAlias
      */
-    public function findWithCategory($id)
+    public function findWithCategory($id): PostEntityAlias
     {
         return $this->query('
         SELECT billets.id, billets.title, billets.content, billets.date, categories.title as categorie
