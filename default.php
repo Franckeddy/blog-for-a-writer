@@ -22,10 +22,10 @@
     <!--navbar-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <a class="navbar-brand text-white h4" href="index.php" style="align-content: center">Accueil</a>
-        <?php if (isset($_SESSION['auth'])) {
+        <?php if (!isset($_SESSION['username, password'])) {
             echo '<a class="text-muted" href="?p=admin.posts.index">Administration du Site.</a>';
         } else {
-            echo '<a>Vous devez vous identifier</a>';
+            echo "<a>Vous devez vous identifier</a>";
         }
         ?>
     </nav>

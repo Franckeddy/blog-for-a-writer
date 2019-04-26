@@ -17,8 +17,7 @@
                 le <em><?= date('d/m/Y', strtotime($comment['created'])) ?></em>
             </p>
             <p>
-                <?php $chaine = (string)$comment['content'];
-                echo htmlspecialchars($chaine, ENT_COMPAT); ?>
+                <?= $comment['content'] ?>
             </p>
         </div>
     </div>

@@ -15,7 +15,7 @@
             <?php endforeach;
         } else {
             echo '<h4>Aucun article dans cette rubrique</h4>
-                  <a href="index" class="btn btn-outline-secondary">Retour à l\'acceuil.</a>';
+                  <a href="index.php" class="btn btn-outline-secondary">Retour à l\'acceuil.</a>';
         }
         ?>
     </div>
@@ -30,6 +30,6 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-        <a href="../index" class="btn btn-outline-secondary" style="margin-left: 2em">Retour à l'acceuil.</a>
+        <a href="index.php" class="btn btn-outline-secondary" style="margin-left: 2em">Retour à l'acceuil.</a>
     </div>
 </div>

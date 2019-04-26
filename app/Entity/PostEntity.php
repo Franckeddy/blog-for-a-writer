@@ -41,7 +41,7 @@ class PostEntity extends Entity
      */
     public function getUrl()
     {
-        return 'posts/' . $this->id;
+        return 'index.php?p=posts.show&id=' . $this->id;
     }
 
     /**
@@ -72,7 +72,6 @@ class PostEntity extends Entity
 
     public function getCategory_Id()
     {
-
     }
 
     public function getContent()
