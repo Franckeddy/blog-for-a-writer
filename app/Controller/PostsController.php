@@ -57,9 +57,9 @@ class PostsController extends AppController
                 'created' => date('Y-m-d H:i:s'),
             ]);
             if ($result) {
-                return header('location: index.php?p=posts.show&id=');
+                return $this->index();
             }
+            $this->render('posts.show', compact('post', 'comments', 'form'));
         }
-        $this->render('posts.show', compact('post', 'comments', 'form'));
     }
 }
