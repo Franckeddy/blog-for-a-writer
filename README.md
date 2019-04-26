@@ -39,6 +39,9 @@ CircleCI build dashboard shows all recent builds in one place. Filter by "My bui
 
 I use [GitHub](https://github.com/) - Web-based version-control and collaboration platform for software developers.
 
+## URL
+* http://blog.franckgarcon.com/
+
 ## Authors
 
 * [**Franck GARCON**](https://github.com/Franckeddy)
