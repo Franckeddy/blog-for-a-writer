@@ -16,6 +16,11 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/starter-template.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Georgia, serif;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -25,7 +30,7 @@
         <?php if (isset($_SESSION['auth'])) {
             echo '<a class="text-muted" href="?p=admin.posts.index">Administration du Site.</a>';
         } else {
-            echo '<a>Vous devez vous identifier</a>';
+            echo '<a>Vous devez vous identifier pour Administrer le site.</a>';
         }
         ?>
     </nav>
