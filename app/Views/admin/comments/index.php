@@ -3,7 +3,7 @@
     <table class="table">
         <thead>
         <tr>
-            <td><strong>ID</strong></td>
+            <td><strong>Pseudo</strong></td>
             <td><strong style="width: 70%"><strong>Contenu</strong></td>
             <td><strong>Action</strong></td>
         </tr>
@@ -11,7 +11,7 @@
         <tbody>
         <?php foreach ($comments as $comment) : ?>
             <tr>
-                <td><?= $comment['id'] ?></td>
+                <td><?= $comment['username'] ?></td>
                 <td>
                     <?php $chaine = (string)$comment['content'];
                     echo htmlspecialchars($chaine, ENT_COMPAT); ?>
@@ -45,11 +45,4 @@
     </div>
 </div>
 <HR align=center size=8 width="50%">
-<div class="row">
-    <div class="col-6">
-        <a href="?p=admin.categories.index" class="btn btn-outline-info">Retour à l'admin.</a>
-    </div>
-    <div class="col-6">
-        <a href="index.php" class="btn btn-outline-secondary" style="float: right">Retour à l'acceuil.</a>
-    </div>
-</div>
+<a href="index.php" class="btn btn-outline-secondary">Retour à l'acceuil.</a>

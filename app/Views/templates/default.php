@@ -16,11 +16,6 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/starter-template.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Georgia, serif;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
@@ -36,7 +31,8 @@
     </nav>
     <!--body-->
     <div class="container-fluid" style="padding-top: 6em; padding-bottom: 4em">
-        <div class="jumbotron" style="padding-top: 2em;padding-bottom 2em;overflow-y: scroll;height: 38em;position: relative;">
+        <div class="jumbotron"
+             style="padding-top: 2em;padding-bottom 2em;overflow-y: scroll;height: 38em;position: relative;">
             <?= $content ?>
         </div>
     </div>

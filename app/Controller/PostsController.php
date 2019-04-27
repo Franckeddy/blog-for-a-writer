@@ -19,6 +19,9 @@ class PostsController extends AppController
         $this->loadModel('Comment');
     }
 
+    /**
+     * Construction de la page index.
+     */
     public function index()
     {
         $posts = $this->Post->last();
@@ -27,7 +30,7 @@ class PostsController extends AppController
     }
 
     /**
-     *
+     * Construction de la page categories.
      */
     public function categories(): void
     {
@@ -40,6 +43,9 @@ class PostsController extends AppController
         $this->render('posts.category', compact('billets', 'categories', 'categorie'));
     }
 
+    /**
+     * Construction de la page show.
+     */
     public function show()
     {
         $post = $this->Post->findWithCategory($_GET['id']);
@@ -59,7 +65,7 @@ class PostsController extends AppController
             if ($result) {
                 return $this->index();
             }
-            $this->render('posts.show', compact('post', 'comments', 'form'));
         }
+        $this->render('posts.show', compact('post', 'comments', 'form'));
     }
 }

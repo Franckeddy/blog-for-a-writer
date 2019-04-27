@@ -14,10 +14,20 @@ define('ROOT', dirname(__DIR__));
 require ROOT . '/app/App.php';
 App::load();
 
+/**
+ * par defaut pointe vers post.index
+ */
 $page = $_GET['p'] ?? 'posts.index';
 
+/**
+ * séparation de la page par rapport au point.
+ */
 $page = explode('.', $page);
 
+/**
+ * deux parties, en premier le controlleur puis l'action à appeler.
+ * si la page est admin on appele les controllers dans le namespace 'admin' sinon dans le namespace Controller
+ */
 if ($page[0] === 'admin') {
     $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
     $action = $page[2];

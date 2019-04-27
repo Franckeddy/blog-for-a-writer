@@ -4,10 +4,14 @@ namespace Core\Controller;
 
 class Controller
 {
+    /**
+     * Chemin vers le dossier qui contient les vues
+     */
     protected $viewPath;
     protected $template;
 
     /**
+     * Génération des vues
      * @param $view
      * @param array $variables
      */
