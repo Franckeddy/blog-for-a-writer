@@ -26,13 +26,13 @@ _Track your quality evolution_
  Get a code quality glance at your project and track its quality evolution over time, easily paying back your technical debt.Give an example
 ```
 
-**[<img src='https://user-images.githubusercontent.com/194400/41597205-a57442ea-73c4-11e8-9591-61f5c83c7e66.png' width='50' />](https://circleci.com/)** , monitors for any changes in the code repo and starts building unit & integration tests. It assigns label for each version of build and also informs the team for a successful build or if it fails, the team fixes the issue and again starts to integrate. 
+**[<img src='https://user-images.githubusercontent.com/194400/41597205-a57442ea-73c4-11e8-9591-61f5c83c7e66.png' width='60' />](https://circleci.com/)** , monitors for any changes in the code repo and starts building unit & integration tests. It assigns label for each version of build and also informs the team for a successful build or if it fails, the team fixes the issue and again starts to integrate. 
 ```
 CircleCI build dashboard shows all recent builds in one place. Filter by "My builds" or "All builds" to find what you're looking for faster.
 ```
 
 ## Built With
-* [<img src='http://assets.stickpng.com/thumbs/584816c8cef1014c0b5e4987.png' width='30' />](https://www.jetbrains.com/phpstorm/) - **PhpStorm**, The Lightning-Smart PHP IDE.
+* [<img src='https://www.maxime-dalgobbo.fr/blog/wp-content/uploads/2019/02/PhpStorm_Logo-e1549874540765.png' width='30' />](https://www.jetbrains.com/phpstorm/) - **PhpStorm**, The Lightning-Smart PHP IDE.
 * [<img src='https://upload.wikimedia.org/wikipedia/commons/0/03/Fish_shell_logo_ascii.png' width='30' />](https://fishshell.com/) - **Fish**, Command line shell for Linux, macOS, and the rest of the family. 
 
 ## Versioning
