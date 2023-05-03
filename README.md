@@ -1,4 +1,4 @@
-# Blog for a Writer [![CircleCI](https://circleci.com/gh/Franckeddy/blog-for-a-writer.svg?style=svg)](https://circleci.com/gh/Franckeddy/blog-for-a-writer) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2866e5a514004498b463c49e0ec00b71)](https://app.codacy.com/app/Franckeddy/blog-for-a-writer?utm_source=github.com&utm_medium=referral&utm_content=Franckeddy/blog-for-a-writer&utm_campaign=Badge_Grade_Settings)
+# Blog for a Writer [![CircleCI](https://circleci.com/gh/Franckeddy/blog-for-a-writer.svg?style=svg)](https://circleci.com/gh/Franckeddy/blog-for-a-writer)
 
 Simple blog application in <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png' width='30'/> with a <img src='https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1280px-MySQL.svg.png' width='30'/> database. Frontend interface (ticket reading) and a backend interface (ticket administration for writing).
 
